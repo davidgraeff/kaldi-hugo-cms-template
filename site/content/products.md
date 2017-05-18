@@ -18,12 +18,6 @@ intro:
         variety of coffee beans grown with great care for the environment and
         local communities. Check our post or contact us directly for current
         availability.
-    - image: /img/illustrations/coffee-gear.svg
-      text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
     - image: /img/illustrations/tutorials.svg
       text: >
         Love a great cup of coffee, but never knew how to make one? Bought a
@@ -31,6 +25,12 @@ intro:
         to help. You can schedule a custom 1-on-1 consultation with our baristas
         to learn anything you want to know about coffee roasting and brewing.
         Email us or call the store for details.
+    - image: /img/illustrations/coffee-gear.svg
+      text: >
+        We offer a small, but carefully curated selection of brewing gear and
+        tools for every taste and experience level. No matter if you roast your
+        own beans or just bought your first french press, you’ll find a gadget
+        to fall in love with in our shop.
     - image: /img/illustrations/meeting-space.svg
       text: >
         We believe that good coffee has the power to bring people together.
@@ -98,5 +98,10 @@ pricing:
         - Unlimited varieties
       plan: Custom
       price: '?'
+    - description: BUY NOW
+      items:
+        - NOOOWWWW!!!!
+      plan: Lala
+      price: '10000'
 ---
 

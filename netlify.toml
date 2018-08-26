@@ -1,3 +1,6 @@
-[build]
-publish = "public"
-command = "hugo"
+[[redirects]]
+  from = "/"
+  to = "/de"
+  status = 301
+  force = false
+  conditions = {Language = ["de"]}

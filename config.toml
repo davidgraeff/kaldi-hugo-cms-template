@@ -1,0 +1,169 @@
+baseURL = "https://www.kompound.solutions/"
+languageCode = "en-us"
+title = "Kompound Solutions"
+theme = "kompound"
+
+defaultContentLanguage = "en"
+
+[outputs]
+  home = ["HTML", "JSON"]
+
+[languages]
+  [languages.en]
+  weight = 0
+  languageName = "English"
+    [[languages.en.menu.header]]
+      weight = 1
+      name = "Home"
+      url = "/"
+    [[languages.en.menu.header]]
+      weight = 6
+      name = "Developer corner"
+      url = "/blog/"
+    [[languages.en.menu.header]]
+      weight = 3
+      name = "Service"
+      url = "/service/"
+    [[languages.en.menu.header]]
+      weight = 5
+      name = "Contact"
+      url = "/contact/"
+    [[languages.en.menu.legal]]
+      weight = 1
+      name = "Contact us"
+      url = "/contact/"
+    [[languages.en.menu.legal]]
+      weight = 2
+      name = "Subject access request (GDPR)"
+      url = "/sar/"
+      pre = "Request your saved data as regulated by the General Data Protection Regulation"
+    [[languages.en.menu.legal]]
+      weight = 4
+      name = "Privacy Policy"
+      url = "/privacy/"
+    [[languages.en.menu.legal]]
+      weight = 5
+      name = "Imprint"
+      url = "/impressum/"
+    [[languages.en.menu.legal]]
+      weight = 6
+      name = "© 2018 Kompound solutions"
+    [[languages.en.menu.quicklinks]]
+      name = "Request a quote"
+      url = "/quote/"
+    [[languages.en.menu.quicklinks]]
+      name = "Partners"
+      url = "/partners/"
+    [[languages.en.menu.quicklinks]]
+      name = "Frequently Asked Questions"
+      url = "/faq/"
+    [[languages.en.menu.quicklinks]]
+      name = "Past projects"
+      url = "/past_projects/"
+    [[languages.en.menu.ourservices]]
+      name = "Graphic Design"
+      url = "/services/#demo1"
+    [[languages.en.menu.ourservices]]
+      name = "Web Design"
+      url = "/services/#demo2"
+    [[languages.en.menu.ourservices]]
+      name = "Web Development"
+      url = "/services/#demo3"
+
+  [languages.de]
+  weight = 10
+  languageName = "Deutsch"
+    [[languages.de.menu.header]]
+      weight = 1
+      name = "Startseite"
+      url = "/"
+    [[languages.de.menu.header]]
+      weight = 6
+      name = "Developer corner"
+      url = "/blog/"
+    [[languages.de.menu.header]]
+      weight = 3
+      name = "Services"
+      url = "/service/"
+    [[languages.de.menu.header]]
+      weight = 5
+      name = "Kontakt"
+      url = "/contact/"
+    [[languages.de.menu.legal]]
+      weight = 1
+      name = "Kontakt"
+      url = "/contact/"
+    [[languages.de.menu.legal]]
+      weight = 2
+      name = "Auskunftsersuch (DSGVO)"
+      url = "/sar/"
+      pre = "Eigene Daten anfordern, entsprechend wie in der EU-Datenschutz-Grundverordnung vorgeschrieben"
+    [[languages.de.menu.legal]]
+      weight = 4
+      name = "Datenschutzerklärung"
+      url = "/privacy/"
+    [[languages.de.menu.legal]]
+      weight = 5
+      name = "Impressum"
+      url = "/impressum/"
+    [[languages.de.menu.legal]]
+      weight = 6
+      name = "© 2018 Kompound solutions"
+    [[languages.de.menu.quicklinks]]
+      name = "Preise"
+      url = "/quote/"
+    [[languages.de.menu.quicklinks]]
+      name = "Partner"
+      url = "/partners/"
+    [[languages.de.menu.quicklinks]]
+      name = "Häufig gestellte Fragen"
+      url = "/faq/"
+    [[languages.de.menu.quicklinks]]
+      name = "Vorherige Projekte"
+      url = "/past_projects/"
+    [[languages.de.menu.ourservices]]
+      name = "Grafik Design"
+      url = "/services/#demo1"
+    [[languages.de.menu.ourservices]]
+      name = "Web Design"
+      url = "/services/#demo2"
+    [[languages.de.menu.ourservices]]
+      name = "Web Entwicklung"
+      url = "/services/#demo3"
+
+[params.urls]
+  demologin = "/demologin"
+  app_project = "/app/#/projects"
+  app_contracts = "/app/#/contracts"
+  app_report = "/app/#/report"
+
+# The site's parameters
+[languages.de.params]
+  dateFormat = "6. Januar 2006"
+  cookiemsg = "Diese Webseite nutzt Cookies um Ihnen das beste Erlebnis auf dieser Seite zu ermöglichen"
+  cookielearnmore = "Erfahren Sie mehr"
+  cookieok = "Schließen"
+
+[languages.en.params]
+  dateFormat = "6 January 2006"
+  cookiemsg = "This website uses cookies to ensure you get the best experience on our website."
+  cookielearnmore = "Learn more"
+  cookieok = "Dismiss"
+
+  [params.slider]
+    enable = true
+    title = "A digital marketing &amp; design agency"
+    subtitle = "We love the Web and the work we do.<br/>We work closely with our clients to deliver the best possible solutions for their needs"
+
+  [params.feature]
+    enable = true
+    title = "We believe in great ideas"
+    content = "Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+    [params.feature.button]
+      caption = "Go here"
+      url = "#"
+
+  [params.call]
+    enable = true
+    title = "We design delightful digital experiences."
+    paragraph = "Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team who just love to design."

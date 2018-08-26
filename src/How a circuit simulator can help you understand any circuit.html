@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://www.build-electronic-circuits.com/circuit-simulator/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><style type="text/css" id="night-mode-pro-style"></style><link type="text/css" rel="stylesheet" id="night-mode-pro-link"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How a circuit simulator can help you understand any circuit</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.5.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Circuit simulation gives you the flexibility to probe every wire and component so you can measure the voltage drop and current going through them. If you are having trouble understanding a circuit you can try drawing it up at a circuit simulator">
+<link rel="canonical" href="https://www.build-electronic-circuits.com/circuit-simulator/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How a circuit simulator can help you understand any circuit">
+<meta property="og:description" content="Circuit simulation gives you the flexibility to probe every wire and component so you can measure the voltage drop and current going through them. If you are having trouble understanding a circuit you can try drawing it up at a circuit simulator">
+<meta property="og:url" content="https://www.build-electronic-circuits.com/circuit-simulator/">
+<meta property="og:site_name" content="Build Electronic Circuits">
+<meta property="article:section" content="Article">
+<meta property="article:published_time" content="2018-05-22T07:00:18+02:00">
+<meta property="article:modified_time" content="2018-05-22T16:48:41+02:00">
+<meta property="og:updated_time" content="2018-05-22T16:48:41+02:00">
+<meta property="og:image" content="https://www.build-electronic-circuits.com/wp-content/uploads/2018/05/Breadboard_complex.jpg">
+<meta property="og:image:secure_url" content="https://www.build-electronic-circuits.com/wp-content/uploads/2018/05/Breadboard_complex.jpg">
+<meta property="og:image:width" content="1372">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:alt" content="Breadboard_complex">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Circuit simulation gives you the flexibility to probe every wire and component so you can measure the voltage drop and current going through them. If you are having trouble understanding a circuit you can try drawing it up at a circuit simulator">
+<meta name="twitter:title" content="How a circuit simulator can help you understand any circuit">
+<meta name="twitter:site" content="@oyvdahl">
+<meta name="twitter:image" content="https://www.build-electronic-circuits.com/wp-content/uploads/2018/05/Breadboard_complex.jpg">
+<meta name="twitter:creator" content="@oyvdahl">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Build Electronic Circuits » Feed" href="https://www.build-electronic-circuits.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Build Electronic Circuits » Comments Feed" href="https://www.build-electronic-circuits.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Build Electronic Circuits » How a circuit simulator can help you understand any circuit Comments Feed" href="https://www.build-electronic-circuits.com/circuit-simulator/feed/">
+		<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-585LS3D"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.build-electronic-circuits.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.7"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./How a circuit simulator can help you understand any circuit_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="pt-cv-public-style-css" href="./How a circuit simulator can help you understand any circuit_files/cv.css" type="text/css" media="all">
+<link rel="stylesheet" id="bec-custom-genesis-child-css" href="./How a circuit simulator can help you understand any circuit_files/style.css" type="text/css" media="all">
+<style id="bec-custom-genesis-child-inline-css" type="text/css">
+
+
+		a,
+		.entry-title a:focus,
+		.entry-title a:hover,
+		.genesis-nav-menu a:focus,
+		.genesis-nav-menu a:hover,
+		.genesis-nav-menu .current-menu-item > a,
+		.genesis-nav-menu .sub-menu .current-menu-item > a:focus,
+		.genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+		.menu-toggle:focus,
+		.menu-toggle:hover,
+		.sub-menu-toggle:focus,
+		.sub-menu-toggle:hover {
+			color: #d7684d;
+		}
+
+		
+</style>
+<link rel="stylesheet" id="contact-form-7-css" href="./How a circuit simulator can help you understand any circuit_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="tve_style_family_tve_flt-css" href="./How a circuit simulator can help you understand any circuit_files/thrive_flat.css" type="text/css" media="all">
+<link rel="stylesheet" id="tve_leads_forms-css" href="./How a circuit simulator can help you understand any circuit_files/frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="bec-genesis-child-fonts-css" href="./How a circuit simulator can help you understand any circuit_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./How a circuit simulator can help you understand any circuit_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack-widget-social-icons-styles-css" href="./How a circuit simulator can help you understand any circuit_files/social-icons.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./How a circuit simulator can help you understand any circuit_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/jquery.js"></script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ctPublic = {"gdpr_forms":[],"gdpr_text":"By using this form you agree with the storage and processing of your data by using the Privacy Policy on this website."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/apbct-public--gdpr.js"></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.build-electronic-circuits.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="https://www.build-electronic-circuits.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.build-electronic-circuits.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.build-electronic-circuits.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.7">
+<link rel="shortlink" href="https://www.build-electronic-circuits.com/?p=13635">
+
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<!-- DO NOT USE. USE functions.php -->
+<style type="text/css">.site-title a { background: url(https://www.build-electronic-circuits.com/wp-content/uploads/2017/07/Logo-final@0.5x.png) no-repeat !important; }</style>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-585LS3D');</script>
+  <!-- End Google Tag Manager -->
+<link rel="icon" href="https://www.build-electronic-circuits.com/wp-content/uploads/2017/07/cropped-Icon-512x512-32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.build-electronic-circuits.com/wp-content/uploads/2017/07/cropped-Icon-512x512-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.build-electronic-circuits.com/wp-content/uploads/2017/07/cropped-Icon-512x512-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.build-electronic-circuits.com/wp-content/uploads/2017/07/cropped-Icon-512x512-270x270.png">
+</head>
+<body class="post-template-default single single-post postid-13635 single-format-standard custom-header header-image content-sidebar" itemscope="" itemtype="https://schema.org/WebPage">	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-585LS3D"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+<div class="site-container"><ul class="genesis-skip-link"><li><a href="https://www.build-electronic-circuits.com/circuit-simulator/#genesis-content" class="screen-reader-shortcut"> Skip to content</a></li><li><a href="https://www.build-electronic-circuits.com/circuit-simulator/#genesis-sidebar-primary" class="screen-reader-shortcut"> Skip to primary sidebar</a></li><li><a href="https://www.build-electronic-circuits.com/circuit-simulator/#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li></ul><header class="site-header" itemscope="" itemtype="https://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a href="https://www.build-electronic-circuits.com/">Build Electronic Circuits</a></p><p class="site-description" itemprop="description">Electronics explained in a simple way</p></div><div class="widget-area header-widget-area"><section id="nav_menu-2" class="widget widget_nav_menu"><div class="widget-wrap"><button class="menu-toggle dashicons-before dashicons-menu" aria-expanded="false" aria-pressed="false" role="button" id="genesis-mobile-nav-header">Menu</button><nav class="nav-header genesis-responsive-menu" itemscope="" itemtype="https://schema.org/SiteNavigationElement" style=""><ul id="menu-top-menu" class="menu genesis-nav-menu js-superfish sf-js-enabled sf-arrows" style="touch-action: pan-y;"><li id="menu-item-8836" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8836"><a href="https://www.build-electronic-circuits.com/about/" itemprop="url"><span itemprop="name">About Me</span></a></li>
+<li id="menu-item-8856" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8856"><a href="https://www.build-electronic-circuits.com/blog/" itemprop="url"><span itemprop="name">Articles</span></a></li>
+<li id="menu-item-8838" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8838"><a href="https://www.build-electronic-circuits.com/products/" itemprop="url"><span itemprop="name">Products</span></a></li>
+<li id="menu-item-8837" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8837"><a href="https://www.build-electronic-circuits.com/contact/" itemprop="url"><span itemprop="name">Contact</span></a></li>
+</ul></nav></div></section>
+</div></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-13635 post type-post status-publish format-standard has-post-thumbnail category-articles entry" itemscope="" itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How a circuit simulator can help you understand any circuit</h1>
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2018-05-22T07:00:18+00:00">May 22, 2018</time> By <span class="entry-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><a href="https://www.build-electronic-circuits.com/author/roberto/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Roberto Weiser</span></a></span> <span class="entry-comments-link"><a href="https://www.build-electronic-circuits.com/circuit-simulator/#comments">7 Comments</a></span> </p></header><div class="entry-content" itemprop="text"><p>A circuit simulator is a tool for “seeing” what a circuit does. In comparison to mechanical machines such as a bicycle and a lever, electronics cannot be easily inspected by the naked eye.</p>
+<p>When you look at a bicycle you can observe it and see that stepping on the pedals makes a chain turn, and that this chain moves the bicycle wheels.</p>
+<p>In contrast, if you open up an audio amplifier, it will be really hard to tell what it does if you don’t have previous experience in designing and building electronic circuits.<br>
+<span id="more-13635"></span></p>
+<h2>Simulating To Understand A Circuit</h2>
+<p>Circuit simulators give you the flexibility to look at the voltage and current of every wire and component in a circuit.</p>
+<p>If you are having trouble understanding a circuit, you can try drawing it up in a circuit simulator such as <a href="http://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html">LTSpice</a> (free). You can change the input voltage and components parameters and see how the circuit reacts. And this will give you an idea of what the circuit does.</p>
+<h2>Circuit Simulator Example</h2>
+<p>I’ve created a circuit that might be difficult to understand for electronics beginners. But by using a circuit simulator you can figure out the function of it and how its individual parts work:</p>
+<p><a href="https://www.build-electronic-circuits.com/wp-content/uploads/2018/05/sim.png"><img class="aligncenter size-large wp-image-13646" src="./How a circuit simulator can help you understand any circuit_files/sim-1024x501.png" alt="sim" width="1024" height="501" srcset="https://www.build-electronic-circuits.com/wp-content/uploads/2018/05/sim-1024x501.png 1024w, https://www.build-electronic-circuits.com/wp-content/uploads/2018/05/sim-300x147.png 300w, https://www.build-electronic-circuits.com/wp-content/uploads/2018/05/sim-768x376.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></a></p>
+<p>Instead of having many images and long texts, I have made a video to go through the explanation of how to use LTSpice to figure out the function of this circuit. I am not telling you what it does, it’s in the video <img draggable="false" class="emoji" alt="🙂" src="./How a circuit simulator can help you understand any circuit_files/1f642.svg"></p>
+<p>To download the simulation file click <a href="https://drive.google.com/file/d/1wcfdV0NT3qLF2Aw7zNWoDWlsJpUY4fMe/view?usp=sharing">this link</a></p>
+<p>Remember that you have to add the <a href="http://ltwiki.org/index.php?title=Components_Library_and_Circuits">LM339</a> to the components library in order for the simulation to work.</p>
+<p><span class="embed-youtube" style="text-align:center; display: block;"><iframe class="youtube-player" type="text/html" width="640" height="390" src="./How a circuit simulator can help you understand any circuit_files/4gFIvOsp1iM.html" allowfullscreen="true" style="border:0;"></iframe></span></p>
+<h2>How To Understand What A Circuit Does</h2>
+<p>In summary, in order to find out how a circuit works through simulation you should:</p>
+<p><strong>1. Think in terms of I/O:</strong></p>
+<p>If you are analyzing an analog circuit, then its main purpose will be to take an input signal, process it and output it as something else.</p>
+<p>Find out what’s the input parameter, change its value and see how it affects the output. This way you will find out what’s the primary function of the circuit.</p>
+<p><strong>2. Divide the circuit into stages (if applicable):</strong></p>
+<p>Some analog circuits do more than one kind of processing, they could convert a current into a proportional voltage signal and then output another voltage to trigger a switch after a certain amount of time has passed.</p>
+<p>Analog functions can do: conversion, switching, timing, filtering, amplifying, attenuating and more. In order to understand how your circuit works, divide it into stages so you can analyze each stage individually.</p>
+<p>What you are basically doing is creating a smaller structure where you can apply the I/O principle again.</p>
+<p><strong>3. Analyze each stage:</strong></p>
+<p>Change the input parameter and the components values and see how it affects the output, probing different parts of the circuit. This way you will see and find out how this circuit works and relates to the rest of the bigger picture.</p>
+<p>Hopefully, after reading this article and watching the video, you have one more tool in your arsenal as an electronics maker.</p>
+<p style="background: none repeat scroll 0 0 #ff9; clear: both; margin-bottom: 18px; overflow: hidden; border: 1px solid #e5e597; padding: 13px;">This was a guest post by Roberto Weiser. Please visit his website <a href="https://developpa.io/">Developpa</a> to find more useful circuit design tips that will help you both to understand electronics&nbsp;better and to complete your electronic product development. You can also join his <a href="http://eepurl.com/dhJf9H">mailing list</a>&nbsp;to receive regular content and access to the downloadable&nbsp;resources.</p>
+<span id="tve_leads_end_content" style="display: block; visibility: hidden; border: 1px solid transparent;"></span><span style="display:none" class="tl-placeholder-f-type-post_footer"></span></div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.build-electronic-circuits.com/category/articles/" rel="category tag">Article</a></span></p></footer></article><h2 class="screen-reader-text">Reader Interactions</h2><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-93135">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name">aeropeta</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-05-22T12:44:53+00:00" itemprop="datePublished"><a href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93135" class="comment-time-link" itemprop="url">May 22, 2018 at 12:44 pm</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you sir</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93135" onclick="return addComment.moveForm( &quot;comment-93135&quot;, &quot;93135&quot;, &quot;respond&quot;, &quot;13635&quot; )" aria-label="Reply to aeropeta">Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-93231">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name">Jesus Bawa Jr</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-05-26T13:41:19+00:00" itemprop="datePublished"><a href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93231" class="comment-time-link" itemprop="url">May 26, 2018 at 1:41 pm</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you Sir!</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93231" onclick="return addComment.moveForm( &quot;comment-93231&quot;, &quot;93231&quot;, &quot;respond&quot;, &quot;13635&quot; )" aria-label="Reply to Jesus Bawa Jr">Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-93342">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name">Nnamdi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-05-30T21:54:39+00:00" itemprop="datePublished"><a href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93342" class="comment-time-link" itemprop="url">May 30, 2018 at 9:54 pm</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>How can I build a simple laptop charger?</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93342" onclick="return addComment.moveForm( &quot;comment-93342&quot;, &quot;93342&quot;, &quot;respond&quot;, &quot;13635&quot; )" aria-label="Reply to Nnamdi">Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-93494">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name"><a href="http://www.engineering.uodiyala.edu.iq/" class="comment-author-link" rel="external nofollow" itemprop="url">awws altememy</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-06-07T09:50:14+00:00" itemprop="datePublished"><a href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93494" class="comment-time-link" itemprop="url">June 7, 2018 at 9:50 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>A simple telephone charger can be made from an electric transformer, a diode regulator and a voltage regulator for up to 5 volts of voltage</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93494" onclick="return addComment.moveForm( &quot;comment-93494&quot;, &quot;93494&quot;, &quot;respond&quot;, &quot;13635&quot; )" aria-label="Reply to awws altememy">Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-93580">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name">Matthew Yoder</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-06-11T03:16:30+00:00" itemprop="datePublished"><a href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93580" class="comment-time-link" itemprop="url">June 11, 2018 at 3:16 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>how do you know what resisters to use in a circut?</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93580" onclick="return addComment.moveForm( &quot;comment-93580&quot;, &quot;93580&quot;, &quot;respond&quot;, &quot;13635&quot; )" aria-label="Reply to Matthew Yoder">Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-admin odd alt depth-2" id="comment-93734">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name">admin</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-06-19T09:08:56+00:00" itemprop="datePublished"><a href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93734" class="comment-time-link" itemprop="url">June 19, 2018 at 9:08 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Do you mean what value (100 or 470 ohm), or what type (wire-wound/ceramic)?</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93734" onclick="return addComment.moveForm( &quot;comment-93734&quot;, &quot;93734&quot;, &quot;respond&quot;, &quot;13635&quot; )" aria-label="Reply to admin">Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-93922">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name"><a href="https://www.alliedcomponents.com/" class="comment-author-link" rel="external nofollow" itemprop="url">Neal McDonald</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-06-29T09:12:52+00:00" itemprop="datePublished"><a href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93922" class="comment-time-link" itemprop="url">June 29, 2018 at 9:12 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>As an engineer or a technician, from this article you will find it easier to understand any circuit with the help of a circuit simulator. Thanks for sharing this article.</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.build-electronic-circuits.com/circuit-simulator/#comment-93922" onclick="return addComment.moveForm( &quot;comment-93922&quot;, &quot;93922&quot;, &quot;respond&quot;, &quot;13635&quot; )" aria-label="Reply to Neal McDonald">Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.build-electronic-circuits.com/circuit-simulator/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.build-electronic-circuits.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="13635" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><input type="hidden" id="ct_checkjs_6395ebd0f4b478145ecfbaf939454fa4" name="ct_checkjs" value="422540422"><script type="text/javascript">setTimeout(function(){var ct_input_name = 'ct_checkjs_6395ebd0f4b478145ecfbaf939454fa4';if (document.getElementById(ct_input_name) !== null) {var ct_input_value = document.getElementById(ct_input_name).value;document.getElementById(ct_input_name).value = document.getElementById(ct_input_name).value.replace(ct_input_value, '422540422');}}, 1000);</script>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope="" itemtype="https://schema.org/WPSideBar" id="genesis-sidebar-primary"><h2 class="genesis-sidebar-title screen-reader-text">Primary Sidebar</h2><div style="display:none" class="tl-widget-container"><section id="widget_thrive_leads-3" class="widget widget_thrive_leads"><div class="widget-wrap"><span style="display:none" class="tl-placeholder-f-type-widget"></span></div></section>
+</div><section id="enhancedtextwidget-10" class="no-padding widget widget_text enhanced-text-widget"><div class="no-padding widget-wrap"><div class="textwidget widget-text"><div style="text-align:center;">
+<a href="https://www.build-electronic-circuits.com/basic-electronic-components/">
+<img src="./How a circuit simulator can help you understand any circuit_files/Basic-Electronic-Components-Used-in-Circuits400x400.png">
+</a>
+</div></div></div></section>
+<section id="enhancedtextwidget-11" class="no-padding widget widget_text enhanced-text-widget"><div class="no-padding widget-wrap"><div class="textwidget widget-text"><div style="text-align:center;">
+<a href="https://www.build-electronic-circuits.com/electronics-for-beginners/">
+<img src="./How a circuit simulator can help you understand any circuit_files/Learn-Electronics-with-these-10-steps400x400.png">
+</a>
+</div></div></div></section>
+<section id="top-posts-2" class="widget widget_top-posts"><div class="widget-wrap"><h3 class="widgettitle widget-title">Most Popular:</h3>
+<ul>				<li>
+										<a href="https://www.build-electronic-circuits.com/basic-electronic-components/" class="bump-view" data-bump-view="tp">
+						Basic Electronic Components Used in Circuits					</a>
+									</li>
+							<li>
+										<a href="https://www.build-electronic-circuits.com/electronics-for-beginners/" class="bump-view" data-bump-view="tp">
+						The Simple Guide To Learning Electronics For Beginners					</a>
+									</li>
+							<li>
+										<a href="https://www.build-electronic-circuits.com/types-of-solder/" class="bump-view" data-bump-view="tp">
+						How To Choose Types of Solder to Use For Electronic Circuits?					</a>
+									</li>
+							<li>
+										<a href="https://www.build-electronic-circuits.com/pcb-design/" class="bump-view" data-bump-view="tp">
+						PCB Design - How To Create Circuit Boards					</a>
+									</li>
+							<li>
+										<a href="https://www.build-electronic-circuits.com/how-transistors-work/" class="bump-view" data-bump-view="tp">
+						How Transistors Work - A Simple Explanation					</a>
+									</li>
+			</ul></div></section>
+<section id="search-4" class="widget widget_search"><div class="widget-wrap"><h3 class="widgettitle widget-title">Search:</h3>
+<form class="search-form" itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction" method="get" action="https://www.build-electronic-circuits.com/" role="search"><meta itemprop="target" content="https://www.build-electronic-circuits.com/?s={s}"><label class="search-form-label screen-reader-text" for="searchform-5b603705790a10.74088548">Search this website</label><input itemprop="query-input" type="search" name="s" id="searchform-5b603705790a10.74088548" placeholder="Search this website …"><input type="submit" value="Search"></form></div></section>
+
+</aside></div></div><div class="footer-widgets" id="genesis-footer-widgets"><h2 class="genesis-sidebar-title screen-reader-text">Footer</h2><div class="wrap"><div class="widget-area footer-widgets-1 footer-widget-area"><section id="text-22" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div style="margin-left:auto; margin-right: auto;"><img src="./How a circuit simulator can help you understand any circuit_files/Logo-final@0.5x.png"></div>
+</div>
+		</div></section>
+</div><div class="widget-area footer-widgets-2 footer-widget-area"><section id="text-20" class="widget widget_text"><div class="widget-wrap"><h3 class="widgettitle widget-title">Site:</h3>
+			<div class="textwidget"><p><a href="https://www.build-electronic-circuits.com/">Home</a><br>
+<a href="https://www.build-electronic-circuits.com/about/">About</a><br>
+<a href="https://www.build-electronic-circuits.com/blog/">Blog</a><br>
+<a href="https://www.build-electronic-circuits.com/contact/">Contact</a></p>
+</div>
+		</div></section>
+</div><div class="widget-area footer-widgets-3 footer-widget-area"><section id="text-21" class="widget widget_text"><div class="widget-wrap"><h3 class="widgettitle widget-title">Social:</h3>
+			<div class="textwidget"><p><a href="https://www.facebook.com/BuildElectronicCircuits/" target="_blank">Facebook</a><br>
+<a href="https://twitter.com/oyvdahl" target="_blank">Twitter</a><br>
+<a href="https://youtube.com/c/Build-electronic-circuits" target="_blank">YouTube</a><br>
+<a href="https://google.com/+Build-electronic-circuits" target="_blank">Google+</a></p>
+</div>
+		</div></section>
+</div></div></div><footer class="site-footer" itemscope="" itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright ©&nbsp;2018 · Dahl Technology · <a href="https://www.build-electronic-circuits.com/terms-conditions/">Terms and Conditions</a></p></div></footer></div><script type="text/javascript">function ctSetCookie(c_name, value, def_value){document.cookie = c_name + '=' + escape(value) + '; path=/';}ctSetCookie('ct_checkjs', '422540422', '0');</script><span style="display:none" class="tl-placeholder-f-type-lightbox"></span><script type="text/javascript">
+/* <![CDATA[ */
+var ctNocache = {"ajaxurl":"https:\/\/www.build-electronic-circuits.com\/wp-admin\/admin-ajax.php","info_flag":"","set_cookies_flag":"1","blog_home":"https:\/\/www.build-electronic-circuits.com\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/cleantalk_nocache.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.build-electronic-circuits.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/scripts.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var PT_CV_PUBLIC = {"_prefix":"pt-cv-","page_to_show":"5","_nonce":"6771c6cc4f","is_admin":"","is_mobile":"","ajaxurl":"https:\/\/www.build-electronic-circuits.com\/wp-admin\/admin-ajax.php","lang":"","loading_image_src":"data:image\/gif;base64,R0lGODlhDwAPALMPAMrKygwMDJOTkz09PZWVla+vr3p6euTk5M7OzuXl5TMzMwAAAJmZmWZmZszMzP\/\/\/yH\/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAPACwAAAAADwAPAAAEQvDJaZaZOIcV8iQK8VRX4iTYoAwZ4iCYoAjZ4RxejhVNoT+mRGP4cyF4Pp0N98sBGIBMEMOotl6YZ3S61Bmbkm4mAgAh+QQFCgAPACwAAAAADQANAAAENPDJSRSZeA418itN8QiK8BiLITVsFiyBBIoYqnoewAD4xPw9iY4XLGYSjkQR4UAUD45DLwIAIfkEBQoADwAsAAAAAA8ACQAABC\/wyVlamTi3nSdgwFNdhEJgTJoNyoB9ISYoQmdjiZPcj7EYCAeCF1gEDo4Dz2eIAAAh+QQFCgAPACwCAAAADQANAAAEM\/DJBxiYeLKdX3IJZT1FU0iIg2RNKx3OkZVnZ98ToRD4MyiDnkAh6BkNC0MvsAj0kMpHBAAh+QQFCgAPACwGAAAACQAPAAAEMDC59KpFDll73HkAA2wVY5KgiK5b0RRoI6MuzG6EQqCDMlSGheEhUAgqgUUAFRySIgAh+QQFCgAPACwCAAIADQANAAAEM\/DJKZNLND\/kkKaHc3xk+QAMYDKsiaqmZCxGVjSFFCxB1vwy2oOgIDxuucxAMTAJFAJNBAAh+QQFCgAPACwAAAYADwAJAAAEMNAs86q1yaWwwv2Ig0jUZx3OYa4XoRAfwADXoAwfo1+CIjyFRuEho60aSNYlOPxEAAAh+QQFCgAPACwAAAIADQANAAAENPA9s4y8+IUVcqaWJ4qEQozSoAzoIyhCK2NFU2SJk0hNnyEOhKR2AzAAj4Pj4GE4W0bkJQIAOw=="};
+var PT_CV_PAGINATION = {"first":"\u00ab","prev":"\u2039","next":"\u203a","last":"\u00bb","goto_first":"Go to first page","goto_prev":"Go to previous page","goto_next":"Go to next page","goto_last":"Go to last page","current_page":"Current page is","goto_page":"Go to page"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/cv.js"></script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/devicepx-jetpack.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var tve_frontend_options = {"is_editor_page":"","page_events":[],"is_single":"1","ajaxurl":"https:\/\/www.build-electronic-circuits.com\/wp-admin\/admin-ajax.php","social_fb_app_id":"","dash_url":"https:\/\/www.build-electronic-circuits.com\/wp-content\/plugins\/thrive-visual-editor\/thrive-dashboard","translations":{"Copy":"Copy"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/frontend.min.js"></script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/frontend.min(1).js"></script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/hoverIntent.min.js"></script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/superfish.min.js"></script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/superfish.args.min.js"></script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/skip-links.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var genesis_responsive_menu = {"mainMenu":"Menu","menuIconClass":"dashicons-before dashicons-menu","subMenu":"Submenu","subMenuIconsClass":"dashicons-before dashicons-arrow-down-alt2","menuClasses":{"combine":[".nav-primary",".nav-header"],"others":[]}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/responsive-menus.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var tve_dash_front = {"ajaxurl":"https:\/\/www.build-electronic-circuits.com\/wp-admin\/admin-ajax.php","force_ajax_send":"","is_crawler":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/frontend.min(2).js"></script>
+<script type="text/javascript" src="./How a circuit simulator can help you understand any circuit_files/eu-cookie-law.min.js"></script><section id="eu_cookie_law_widget-2" class="widget widget_eu_cookie_law_widget" style="display: block;"><div class="widget-wrap"><div class="hide-on-button" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law">
+	<form method="post">
+		<input type="submit" value="Close and accept" class="accept">
+	</form>
+
+	Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br>
+To find out more, including how to control cookies, see here:
+	<a href="https://www.build-electronic-circuits.com/privacy-policy/">
+		Cookie Policy	</a>
+</div>
+</div></section>
+<script type="text/javascript">/*<![CDATA[*/if ( !window.TL_Const ) {var TL_Const={"security":"2b860cf34b","ajax_url":"https:\/\/www.build-electronic-circuits.com\/wp-admin\/admin-ajax.php","forms":[],"action_conversion":"tve_leads_ajax_conversion","action_impression":"tve_leads_ajax_impression","ajax_load":1,"main_group_id":9087,"display_options":{"allowed_post_types":[],"flag_url_match":false},"custom_post_data":[],"current_screen":{"screen_type":4,"screen_id":13635},"ignored_fields":["email","_captcha_size","_captcha_theme","_captcha_type","_submit_option","_use_captcha","g-recaptcha-response","__tcb_lg_fc","__tcb_lg_msg","_state","_form_type","_error_message_option","_back_url","_submit_option","url","_asset_group","_asset_option","mailchimp_optin"]};} else {ThriveGlobal.$j.extend(true, TL_Const, {"security":"2b860cf34b","ajax_url":"https:\/\/www.build-electronic-circuits.com\/wp-admin\/admin-ajax.php","forms":[],"action_conversion":"tve_leads_ajax_conversion","action_impression":"tve_leads_ajax_impression","ajax_load":1,"main_group_id":9087,"display_options":{"allowed_post_types":[],"flag_url_match":false},"custom_post_data":[],"current_screen":{"screen_type":4,"screen_id":13635},"ignored_fields":["email","_captcha_size","_captcha_theme","_captcha_type","_submit_option","_use_captcha","g-recaptcha-response","__tcb_lg_fc","__tcb_lg_msg","_state","_form_type","_error_message_option","_back_url","_submit_option","url","_asset_group","_asset_option","mailchimp_optin"]})} /*]]> */</script><script type="text/javascript" src="https://stats.wp.com/e-201831.js" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.2.1',blog:'69848438',post:'13635',tz:'2',srv:'www.build-electronic-circuits.com'} ]);
+	_stq.push([ 'clickTrackerInit', '69848438', '13635' ]);
+</script>
+
+</body></html>

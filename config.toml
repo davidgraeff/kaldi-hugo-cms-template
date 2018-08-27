@@ -57,9 +57,7 @@ defaultContentLanguage = "en"
     [[languages.en.menu.quicklinks]]
       name = "Frequently Asked Questions"
       url = "/faq/"
-    [[languages.en.menu.quicklinks]]
-      name = "Past projects"
-      url = "/past_projects/"
+
     [[languages.en.menu.ourservices]]
       name = "Graphic Design"
       url = "/services/#demo1"
@@ -118,9 +116,7 @@ defaultContentLanguage = "en"
     [[languages.de.menu.quicklinks]]
       name = "Häufig gestellte Fragen"
       url = "/faq/"
-    [[languages.de.menu.quicklinks]]
-      name = "Vorherige Projekte"
-      url = "/past_projects/"
+
     [[languages.de.menu.ourservices]]
       name = "Grafik Design"
       url = "/services/#demo1"

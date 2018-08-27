@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "big-page-title.html" . }}
+
+<section class="section">
+<div class="container">
+<div class="col-md-7 col-sm-12">
+  {{ with .Params }}
+
+  <h3>{{ .headtitle }}</h3>
+  
+  <div class="imprintblock">{{ .address | safeHTML }}</div>
+  
+  <p>{{ .ceo }}</p>
+  <p><i class="fas fa-envelope"></i> {{ .email }}<br>
+    <i class="fas fa-phone"></i> {{ .phone }}</p>
+  <p>{{ .vat }}</p>
+  
+  <p>{{ .responsible }}</p>
+  
+  {{ end }}
+</div>
+
+<div class="col-md-5 col-sm-12">
+  {{ .Content }}
+</div>
+
+</div>
+</section>
+
+{{ end }}

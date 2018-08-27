@@ -1,0 +1,21 @@
+{{ define "main" }}
+<style>
+	.post section {
+		-webkit-column-count: 3; /* Chrome, Safari, Opera */
+		-moz-column-count: 3; /* Firefox */
+		column-count: 3;
+		-webkit-column-width: 200px;
+   		-moz-column-width: 200px;
+        column-width: 200px;
+	}
+</style>
+		
+<div class="container post" style="border: 1px dotted #ddd;">
+	<h1>{{ .Params.title }}</h1>
+	<div class="post-info-wrapper">
+		<p class="italic bold">{{ .Params.dateInfo }}</p>
+	</div>
+	<hr />
+	{{ .Content }}
+</div>
+{{ end }}

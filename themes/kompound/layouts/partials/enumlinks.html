@@ -1,0 +1,15 @@
+{{ range $element := .menu -}}
+{{- with $element.URL -}}
+<li><a href="{{ $element.URL | relLangURL }}"
+    {{- with $element.Pre -}}
+      data-toggle="tooltip" title="{{ $element.Pre }}" data-placement="top"
+    {{- end -}}
+    {{- with $element.Post -}}
+        data-fullreload="true"
+    {{- end -}}
+    >{{- $element.Name -}}
+  </a></li>
+{{ else -}}
+<li>{{- $element.Name -}}</li>
+{{- end -}}
+{{- end }}

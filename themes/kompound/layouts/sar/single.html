@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "big-page-title.html" . }}
+
+<!-- contact form start -->
+{{ with .Params }}
+<section class="minisection">
+<div class="container">
+  <form class="interact-form" action="/sarform" data-netlify="true" name="sar" netlify-honeypot="cigarette-brand">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+      {{ .note | safeHTML }}
+      </div>
+      <div class="col-md-6 col-sm-12">
+          <div class="form-group form-special">
+            <input type="text" class="form-control" placeholder="Cigarette brand" name="cigarette-brand">
+          </div>
+          <div class="form-group">
+            <input required type="text" class="form-control" placeholder="{{ .formname }}" name="name" autofocus>
+          </div>
+          <div class="form-group">
+            <input required type="email" class="form-control" placeholder="{{ .formemail }}" name="email">
+          </div>
+          <button class="btn btn-default" type="submit" data-loading="<i class='fas fa-circle-notch fa-spin'></i> {{ i18n "transmitting" }}...">{{ .formbutton }}</button>
+      </div>
+    </div>
+  </form>
+</div>
+</section>
+{{ end }}
+{{ end }}

@@ -1,0 +1,78 @@
+<header id="header" class="sticky">
+    <div id="cookie-message" role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-banner" >
+      <!--googleoff: all-->
+      <span id="cookieconsent:desc" class="cc-message">{{ .Site.Params.cookiemsg }}
+        <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="{{ .Site.BaseURL | relLangURL }}/privacy#cookies" rel="noopener noreferrer nofollow">{{ .Site.Params.cookielearnmore }}</a>
+      </span>
+      <div class="cc-compliance">
+        <a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-dismiss" id="cc-dismiss" href="#">{{ .Site.Params.cookieok }}</a>
+      </div>
+      <!--googleon: all-->
+    </div>
+    <script src="/js/cookie-message.js" async></script>
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="d-flex flex-grow-1">
+      <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
+          <img async src="{{ .Site.BaseURL }}img/mainlogo.svg" alt="{{ .Site.Title }} Logo">
+      </a>
+      <div class="w-100 text-right">
+          <button class="navbar-toggler" type="button" data-toggle="collapse"     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>    
+      </div>
+    </div>
+      <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+        {{ $scratch := newScratch }}
+        {{- range $p :=  .Site.Menus.header -}}
+          {{- $scratch.Set "isDone" false -}}
+          <li class="nav-item">
+            {{- range $i := $.Site.AllPages -}}
+              {{- if not ($scratch.Get "isDone") -}}
+                {{- if eq (string $i.RelPermalink) (string $p.URL) -}}
+                  {{- $scratch.Set "isDone" true -}}
+                  {{- if eq (len $i.Translations) 0 -}}
+                  <a class="nav-link" href="{{ $p.URL }}">
+                    {{- if ne (string $.Lang) "en" -}}
+                    <span class="flag-icon flag-icon-en"></span>
+                    {{- end -}}
+                    {{ $p.Name }}</a>
+                  {{- else -}}
+                    {{- $tr := index $i.Translations 0 -}}
+                    {{- if eq (string $tr.Lang) "de" -}}
+                    <a class="nav-link" href="{{ $p.URL | relLangURL }}">{{ $p.Name }}</a>
+                    {{- else -}}
+                    <a class="nav-link" href="{{ $p.URL }}">{{ $p.Name }}</a>
+                    {{- end -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+            
+          </li>
+        {{ end }}
+        {{- if .IsTranslated -}}
+            {{- range .Translations -}}
+            <li class="nav-item">
+                <a class="nav-link" data-fullreload="true" href="{{ .Permalink }}"> <span class="flag-icon flag-icon-{{ .Language.Lang }}"></span>                        {{- .Language.LanguageName -}}</a>
+            </li>
+            {{- end -}}
+        {{- else -}}
+          {{- range .Site.Languages -}}
+            {{- if ne $.Site.Language.Lang .Lang -}}
+            <li class="nav-item">
+              <a class="nav-link" id="selectlanguage" rel="alternate" href="/{{ .Lang }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
+                <span class="flag-icon flag-icon-{{ .Lang }}"></span>
+                {{ .Params.LanguageName }}</a>
+            </li>
+            {{- end -}}
+          {{- end -}}
+        {{ end }}
+        </ul>
+      </div>
+  </nav>
+</div>
+</header>
+<div class="progress"></div>

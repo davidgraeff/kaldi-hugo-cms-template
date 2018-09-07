@@ -1,5 +1,5 @@
 <header id="header" class="sticky">
-    <div id="cookie-message" role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-banner" >
+    <div id="cookie-message" role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-banner scalezero" >
       <!--googleoff: all-->
       <span id="cookieconsent:desc" class="cc-message">{{ .Site.Params.cookiemsg }}
         <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="{{ .Site.BaseURL | relLangURL }}/privacy#cookies" rel="noopener noreferrer nofollow">{{ .Site.Params.cookielearnmore }}</a>
@@ -25,18 +25,17 @@
     </div>
       <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto flex-nowrap">
-        {{ $scratch := newScratch }}
         {{- range $p :=  .Site.Menus.header -}}
-          {{- $scratch.Set "isDone" false -}}
+          {{- $isDone := false -}}
           <li class="nav-item">
             {{- range $i := $.Site.AllPages -}}
-              {{- if not ($scratch.Get "isDone") -}}
+              {{- if not ($isDone) -}}
                 {{- if eq (string $i.RelPermalink) (string $p.URL) -}}
-                  {{- $scratch.Set "isDone" true -}}
+                  {{- $isDone := true -}}
                   {{- if eq (len $i.Translations) 0 -}}
                   <a class="nav-link" href="{{ $p.URL }}">
                     {{- if ne (string $.Lang) "en" -}}
-                    <span class="flag-icon flag-icon-en"></span>
+                    <i class="flag-icon flag-icon-en"></i>
                     {{- end -}}
                     {{ $p.Name }}</a>
                   {{- else -}}
@@ -56,16 +55,16 @@
         {{- if .IsTranslated -}}
             {{- range .Translations -}}
             <li class="nav-item">
-                <a class="nav-link" data-fullreload="true" href="{{ .Permalink }}"> <span class="flag-icon flag-icon-{{ .Language.Lang }}"></span>                        {{- .Language.LanguageName -}}</a>
+                <a class="nav-link" id="selectlanguage" data-fullreload="true" href="{{ .Permalink }}"> <i class="flag-icon flag-icon-{{ .Language.Lang }}"></i>{{- .Language.LanguageName -}}</a>
             </li>
             {{- end -}}
         {{- else -}}
           {{- range .Site.Languages -}}
             {{- if ne $.Site.Language.Lang .Lang -}}
             <li class="nav-item">
-              <a class="nav-link" id="selectlanguage" rel="alternate" href="/{{ .Lang }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
-                <span class="flag-icon flag-icon-{{ .Lang }}"></span>
-                {{ .Params.LanguageName }}</a>
+              <a class="nav-link" id="selectlanguage"  data-fullreload="true" rel="alternate" href="/{{ .Lang }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
+                <i class="flag-icon flag-icon-{{ .Lang }}"></i>{{- .Params.LanguageName -}}
+              </a>
             </li>
             {{- end -}}
           {{- end -}}

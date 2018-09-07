@@ -10,8 +10,9 @@ formbutton: Nachricht senden
 formsuccess: Erfolgreich übermittelt
 addresstitle: Ihr starker Partner in Ihrer Nähe
 boxaddress: Am Zehnthof, 45307 Essen
-boxemail: "E-Mail: support@kompound.solutions"
-boxphone: "Phone: +49 163 266 2555"
+boxemail: E-Mail
+boxphone: Tel
+boxfax: Fax
 socialtitle: Social media
 
 boxsocial:

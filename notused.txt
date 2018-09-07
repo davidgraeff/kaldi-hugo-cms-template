@@ -1,0 +1,9 @@
+                <br style="clear:both">
+                <p><small>*: Unser unverbindlicher Kostenrechner gibt Ihnen eine Entscheidungshilfe. Angegebene Tage meinen Werktage und sind
+                        Schätzwerte da diese stark von der Art Ihres Produktes abhängen.
+                        Angegebene Preise sind erfahrungsbasiert und können je nach realler Aufgabe nach unten oder oben abweichen.</small>
+                </p>
+                <p><small>**: Eingesetzte Mitarbeiterstunden beeinflussen die Projektdauer und die Kosten.
+                    Mehr Stunden erhöhen den Stundenlohn um einen steigenden Faktor, da zusätzlicher Kommunikations- und Planungsaufwand anfällt.</small>
+                </p>
+                        

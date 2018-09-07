@@ -133,6 +133,11 @@ defaultContentLanguage = "en"
   app_contracts = "/app/#/contracts"
   app_report = "/app/#/report"
 
+[params]
+  email = "<a href='mailto:support@kompound.solutions'>support@kompound.solutions</a>"
+  phone = "<a href='tel:+491632662555'>+49 163 266 2555</a>"
+  fax = "<a href='fax:+4932223942249'>+49 32223 942 249</a>"
+
 # The site's parameters
 [languages.de.params]
   dateFormat = "6. Januar 2006"
@@ -146,20 +151,70 @@ defaultContentLanguage = "en"
   cookielearnmore = "Learn more"
   cookieok = "Dismiss"
 
-  [params.slider]
-    enable = true
+  [languages.en.params.slider]
     title = "A digital marketing &amp; design agency"
     subtitle = "We love the Web and the work we do.<br/>We work closely with our clients to deliver the best possible solutions for their needs"
 
-  [params.feature]
-    enable = true
-    title = "We believe in great ideas"
+  [languages.de.params.slider]
+    title = "A digital marketing &amp; design agency"
+    subtitle = "We love the Web and the work we do.<br/>We work closely with our clients to deliver the best possible solutions for their needs"
+
+  [languages.en.params.feature]
+    title = "AWe believe in great ideas"
     content = "Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
-    [params.feature.button]
+    [languages.en.params.feature.button]
       caption = "Go here"
       url = "#"
 
-  [params.call]
+  [languages.de.params.feature]
+    title = "AWe believe in great ideas"
+    content = "Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+    [languages.de.params.feature.button]
+      caption = "Go here"
+      url = "#"
+
+  [languages.en.params.call]
     enable = true
-    title = "We design delightful digital experiences."
-    paragraph = "Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team who just love to design."
+    title = "We call you back"
+    close = "Close"
+    schedule = "Schedule callback"
+    formname = "Company / Name"
+    formtel = "Phone Number"
+    formsubject = "(Optional) Subject"
+    formtime = "Preferred time"
+    formtoday = "Today"
+    [languages.en.params.call.btnRequestQuote]
+      msg = "Request an instant, no-obligation quote"
+      caption = "Get a quote!"
+      url = "/quote"
+    [languages.en.params.call.btnContact]
+      msg = "Request an instant, no-obligation quote"
+      caption = "Contact us"
+      url = "/contact"
+    [languages.en.params.call.btnCallback]
+      msg = "Enter your details and we call you back!"
+      caption = "Let us call you back"
+      url = "#"
+
+  [languages.de.params.call]
+    enable = true
+    title = "Wir rufen zurück"
+    close = "Schließen"
+    schedule = "Rückruf planen"
+    formname = "Firmenname / Name"
+    formtel = "Telefonnummer"
+    formsubject = "(Optional) Thema"
+    formtime = "Wunschzeit"
+    formtoday = "Heute"
+    [languages.de.params.call.btnRequestQuote]
+      msg = "Request an instant, no-obligation quote"
+      caption = "Unverbindlicher Kostenrechner"
+      url = "/quote"
+    [languages.de.params.call.btnContact]
+      msg = "Request an instant, no-obligation quote"
+      caption = "Kontaktieren Sie uns"
+      url = "/contact"
+    [languages.de.params.call.btnCallback]
+      msg = "Let us call you back!"
+      caption = "Rückruf vereinbaren"
+      url = "/contact"

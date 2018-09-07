@@ -13,18 +13,15 @@
     {{ .Hugo.Generator }}
 
 {{- $bootstrapstyle := resources.Get "css/bootstrap.min.css" -}}
-{{ $tinysliderstyle := resources.Get "css/tiny-slider.css" -}}
-{{ $fontawesomestyle := resources.Get "css/fontawesome.min.css" -}}
 {{ $mainstyle := resources.Get "css/main.css" -}}
 {{ $fontsstyle := resources.Get "css/fonts.css" -}}
-{{ $ioniconsstyle := resources.Get "css/ionicons.min.css" -}}
-{{ $animatestyle := resources.Get "css/animate.css" -}}
-{{ $responsivestyle := resources.Get "css/responsive.css" -}}
-{{ $syntaxstyle := resources.Get "css/syntax.css" -}}
 {{ $flagsstyle := resources.Get "css/flag-icon.min.css" -}}
-{{ $style := slice $bootstrapstyle $tinysliderstyle $fontawesomestyle $mainstyle $fontsstyle $ioniconsstyle $animatestyle $responsivestyle $syntaxstyle $flagsstyle | resources.Concat "css/main.css" | minify | fingerprint -}}
+{{ $style := slice $bootstrapstyle $mainstyle $fontsstyle $flagsstyle | resources.Concat "css/main.css" | minify | fingerprint -}}
 
     <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" async href="/css/fontawesome.min.css">
+{{ $animatestyle := resources.Get "css/animate.css" | minify -}}
+    <link rel="stylesheet" async href="{{ $animatestyle.Permalink }}">
 
 {{- $waypointsjs := resources.Get "js/noframework.waypoints.min.js" -}}
 {{ $sliderjs := resources.Get "/js/tiny-slider.min.js" -}}
@@ -34,10 +31,30 @@
 
 {{- $js := slice $waypointsjs $sliderjs $bootstrapjs $localpurechatjs $mainjs | resources.Concat "js/main.js" | minify }}
     <script type='text/javascript' src="{{ $js.Permalink }}"></script>
-    <script type='text/javascript' src="/js/WidgetScript.js" defer onload="loadWidget()"></script>
+    <script type='text/javascript' src="/js/WidgetScript.js" async onload="loadWidget()"></script>
 
 {{ $markjs := resources.Get "/js/mark.min.js" -}}
 {{ $fusejs := resources.Get "/js/fuse.min.js" -}}
 {{- $searchjs := slice $markjs $fusejs | resources.Concat "js/search.js" | minify }}
-    <script type='text/javascript' src="{{ $searchjs.Permalink }}" defer onload="loadsearch()"></script>
+    <!--<script type='text/javascript' src="{{ $searchjs.Permalink }}" async></script>-->
     
+    {{ $vuejs := resources.Get "/js/vue.dev.js" -}}
+    {{ $vueBootstrap := resources.Get "/js/vueBootstrap.js" -}}
+    {{ $httpVueLoader := resources.Get "/js/httpVueLoader.js" -}}
+    {{- $vuejs := slice $vuejs $vueBootstrap $httpVueLoader | resources.Concat "js/vue.js" | minify | fingerprint }}
+    
+    <link rel="subresource" href="{{ $vuejs.Permalink }}">
+    <link rel="subresource" href="/js/quote.js">
+    <script>
+        [
+        {m:false, s:'{{ $vuejs.Permalink }}'},
+        {m:true, s:'/js/quote.js'},
+        ].forEach(function(item) {
+        var script = document.createElement('script');
+        script.src = item.s;
+        script.async = false;
+        if (item.m) script.type = "module";
+        document.head.appendChild(script);
+        });
+
+    </script>

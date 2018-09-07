@@ -22,9 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
       progress.style.setProperty('--scroll', scroll + '%');
     });
 
-
-    // Form submissions via ajax (need rebinding after every content change)
-    document.addEventListener("MainContentChanged", () =>
+    document.addEventListener("MainContentChanged", () => {
+        // Form submissions via ajax (need rebinding after every content change)
         document.querySelectorAll("form.interact-form").forEach(el => {
             el.addEventListener('submit', e => {
                 e.preventDefault();
@@ -42,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(()=> {
                     elemBtn.disabled = false;
                     elemBtn.innerHTML = elemBtn.dataset['otext'];
+                    e.target.dispatchEvent(new Event('FormSubmitted'));
                 }, 2000);
             });
             var timeoutHandle = null;
@@ -57,22 +57,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 2000);
             }, false);
         })
-    );
+    });
     document.dispatchEvent(new Event('MainContentChanged'));
+    window.loaded = true;
 
     // Ajax loading of pages. Intercept link clicks.
     document.body.addEventListener("click", event => {
         if (event.target.tagName !== "A" ||
             event.target.dataset["fullreload"]) return;
-        if (history === null) return;
-        event.preventDefault();
+        if (history === null || event.target.href === "") return;
 
         // External links should instead open in a new tab
-        var newUrl = event.target.href;
+        var newUrl = new URL(event.target.href);
         var domain = window.location.origin;
-        if (typeof domain !== "string" || newUrl.search(domain) !== 0) {
-            window.open(newUrl, "_blank");
+        if (newUrl.hostname !== window.location.hostname) {
+            // Other domain -> default behaviour
+        } else if (newUrl.pathname === window.location.pathname) {
+            // Only anchor changed -> default behaviour
+            if (newUrl.hash === window.location.hash)
+                event.preventDefault(); // Same url -> do nothing
         } else {
+            event.preventDefault();
             fetch(newUrl)
             .then(response => {
                 if(response.ok)
@@ -84,11 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (doc === null) return;
 
                 var newContent = doc.getElementById("mainContent");
-                if (newContent === null) return;
+                var elemLanguage = doc.getElementById("selectlanguage");
+                if (newContent === null || elemLanguage === null) return;
 
                 document.title = doc.title;
-                var contentElement = document.getElementById("mainContent");
-                contentElement.replaceWith(newContent);
+                document.getElementById("mainContent").replaceWith(newContent);
+                document.getElementById("selectlanguage").replaceWith(elemLanguage);
 
                 document.dispatchEvent(new Event('MainContentChanged'));
 
@@ -104,3 +110,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 }); 
+
+window.inlineSVG = function(img) {
+    var imgID = img.id;
+    var imgClass = img.className;
+    var imgURL = img.src;
+    fetch(imgURL).then(response => response.text()).then(text=>{
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(text, "text/xml");
+        var svg = xmlDoc.getElementsByTagName('svg')[0];
+        if(typeof imgID !== undefined) { svg.setAttribute('id', imgID); }
+        if(typeof imgClass !== undefined) { svg.setAttribute('class', imgClass+' replaced-svg'); }
+        svg.removeAttribute('xmlns:a');
+        svg.removeAttribute('width');
+        svg.removeAttribute('height');
+        if(!svg.getAttribute('viewBox') && svg.getAttribute('height') && svg.getAttribute('width')) {
+            svg.setAttribute('viewBox', '0 0 ' + svg.getAttribute('height') + ' ' + svg.getAttribute('width'))
+        }
+        img.parentNode.replaceChild(svg, img);
+    });
+}

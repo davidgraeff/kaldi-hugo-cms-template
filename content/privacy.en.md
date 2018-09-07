@@ -86,9 +86,7 @@ We hereby expressly prohibit the use of contact data published in the context of
 ### 3. Data protection officer
 {{% col3md %}}
 
-Statutory data protection officer
-
-We have appointed a data protection officer for our company.
+The organisational structure of Kompound Solutions does not require a data protection officer. Please contact us at the address given in the imprint.
 
 {{% /col3md %}}
 ### 4. Data collection on our website
@@ -133,6 +131,7 @@ If you have agreed on contracting us, we will setup a customer portal for you.
 Your project and contract information as well as your details, including the customer data ("personal data") provided by you and, if applicable, participant data will be stored by us, processed and used to offer you our services. Your personal data can be made accessible by our employees to the relevant in-house departments and specialist departments. 
 
 For this we collect at least the following mandatory data: 
+
 * First and Last Name 
 * E-mail address 
 * Address
@@ -145,38 +144,6 @@ To inform you about important changes such as those within the scope of our site
 We will process the data provided during registration only based on your consent per Art. 6 (1)(a) DSGVO. You may revoke your consent at any time with future effect. An informal email making this request is sufficient. The data processed before we receive your request may still be legally processed.
 
 We will continue to store the data collected during registration for as long as you remain registered on our website. Statutory retention periods remain unaffected.
-
-#### Registration with Facebook Connect
-
-Instead of registering directly on our website, you may also register using Facebook Connect. This service is provided by Facebook Ireland Limited, 4 Grand Canal Square, Dublin 2, Ireland.
-
-If you decide to register with Facebook Connect and click on the "Login with Facebook" or "Connect with Facebook" buttons, you will be automatically redirected to the Facebook platform. There you can log in with your Facebook username and password. This will link your Facebook profile to our website or services. This link gives us access to your data stored on Facebook. Including especially your:
-
-Facebook name
-
-Facebook profile picture
-
-Facebook cover picture
-
-Email address provided to Facebook
-
-Facebook ID
-
-Facebook friends
-
-Facebook Likes
-
-Birthday
-
-Gender
-
-Country
-
-Language
-
-This data will be used to set up, provide, and personalize your account.
-
-For more information, see Facebook's Terms of Use and Privacy Policy. These can be found at https://de-de.facebook.com/about/privacy/ and https://www.facebook.com/legal/terms/ .
 
 {{% /col3md %}}
 ### 5. Social media

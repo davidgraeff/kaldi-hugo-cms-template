@@ -1,12 +1,12 @@
 {{ define "main" }}
 <style>
+	.post h3 {
+		padding-bottom: 20px;
+	}
 	.post section {
-		-webkit-column-count: 3; /* Chrome, Safari, Opera */
-		-moz-column-count: 3; /* Firefox */
-		column-count: 3;
-		-webkit-column-width: 200px;
-   		-moz-column-width: 200px;
-        column-width: 200px;
+		column-count: 2;
+		column-width: 200px;
+		padding-bottom: 20px;
 	}
 </style>
 		
@@ -16,6 +16,6 @@
 		<p class="italic bold">{{ .Params.dateInfo }}</p>
 	</div>
 	<hr />
-	{{ .Content }}
+	{{ markdownify .Content }}
 </div>
 {{ end }}

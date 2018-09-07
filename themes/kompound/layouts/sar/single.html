@@ -5,7 +5,7 @@
 {{ with .Params }}
 <section class="minisection">
 <div class="container">
-  <form class="interact-form" action="/sarform" data-netlify="true" name="sar" netlify-honeypot="cigarette-brand">
+  <form class="interact-form" action="/sarform" data-netlify="true" name="sar" netlify-honeypot="cigarette-brand" id="sarform">
     <div class="row">
       <div class="col-md-6 col-sm-12">
       {{ .note | safeHTML }}
@@ -26,5 +26,11 @@
   </form>
 </div>
 </section>
+<style>
+    #sarform button[type=submit] {
+      width: 100%;
+      height: 60px;
+    }
+  </style>
 {{ end }}
 {{ end }}

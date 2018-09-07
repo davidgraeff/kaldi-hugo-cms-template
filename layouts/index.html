@@ -1,8 +1,14 @@
 {{ define "main" }}
+	{{ $style := resources.Get "css/index.css" -}}
+	{{ $tinysliderstyle := resources.Get "css/tiny-slider.css" -}}
+	{{ $style := slice $style $tinysliderstyle | resources.Concat "css/page.css" | minify | fingerprint -}}
+
+	<link rel="stylesheet" href="{{ $style.Permalink }}">
+
 	{{ partial "index-logo.html" . }}
 	{{ partial "index-aboutus.html" . }}
 
-	{{ partial "index-portfolio.html" . }}
+	{{ partial "index-feature.html" . }}
 	{{ partial "index-services.html" . }}
 
 	{{ partial "call-to-action.html" . }}

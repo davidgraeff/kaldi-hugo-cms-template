@@ -2,17 +2,14 @@
   <head>
     <title>Product and order management</title>
     {{ $bootstrapstyle := resources.Get "css/bootstrap.min.css" -}}
-    {{ $fontawesomestyle := resources.Get "css/fontawesome.min.css" -}}
     {{ $mainstyle := resources.Get "css/main.css" -}}
     {{ $fontsstyle := resources.Get "css/fonts.css" -}}
-    {{ $ioniconsstyle := resources.Get "css/ionicons.min.css" -}}
-    {{ $animatestyle := resources.Get "css/animate.css" -}}
-    {{ $responsivestyle := resources.Get "css/responsive.css" -}}
-    {{ $syntaxstyle := resources.Get "css/syntax.css" -}}
-    {{ $flagsstyle := resources.Get "css/flag-icon.min.css" -}}
     {{ $appstyle := resources.Get "css/app.css" -}}
-    {{ $styleApp := slice $bootstrapstyle $fontawesomestyle $mainstyle $fontsstyle $ioniconsstyle $animatestyle $responsivestyle $syntaxstyle $flagsstyle $appstyle | resources.Concat "css/app.css" | minify | fingerprint }}
+    {{ $styleApp := slice $bootstrapstyle $mainstyle $fontsstyle  $appstyle | resources.Concat "css/app.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styleApp.Permalink }}">
+    <link rel="stylesheet" async href="css/fontawesome.min.css">
+    {{ $animatestyle := resources.Get "css/animate.css" | minify -}}
+    <link rel="stylesheet" async href="{{ $animatestyle.Permalink }}">
     <script src="/js/app.min.js"></script>
   </head>
   <body id="app">

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div v-for="(group,groupid) of $root.$options.products.groups" :key="groupid" id="determineparts">
+    <div v-for="(group,groupid) of $root.$options.products.groups" :key="groupid" id="determineparts" class="maxw">
         <span class="h1">{{ $root.tr(group,"text") }}</span><br><small>{{ $root.tr(group,"desc") }}</small>
         <div class="card-deck p-4">
             <a href="#" v-for="(task,taskid) of $root.$options.products.tasks" :key="task.id" v-if="task.gid == groupid"
@@ -67,6 +67,9 @@ module.exports = {
 }
 </script>
 <style>
+#determineparts .card-deck {
+    justify-content: center;
+}
 #determineparts .card {
     max-width: 200px;
     flex-basis: auto;

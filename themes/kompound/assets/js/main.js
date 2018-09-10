@@ -1,3 +1,40 @@
+function interceptFormSubmissions() {
+    // Form submissions via ajax (need rebinding after every content change)
+    document.querySelectorAll("form.interact-form").forEach(el => {
+        el.addEventListener('submit', e => {
+            e.preventDefault();
+            var formData = new FormData(e.target);
+            var xhr = new XMLHttpRequest();
+            formData.set("form-name",e.target.name);
+            xhr.open("POST", e.target.action);
+            xhr.send(formData);
+            e.target.reset();
+            sessionStorage.removeItem("contactform_text");
+            var elemBtn = el.querySelector("button[type=submit]");
+            elemBtn.disabled = true;
+            elemBtn.dataset['otext'] = elemBtn.innerHTML;
+            elemBtn.innerHTML = elemBtn.dataset['loading'];
+            setTimeout(()=> {
+                elemBtn.disabled = false;
+                elemBtn.innerHTML = elemBtn.dataset['otext'];
+                e.target.dispatchEvent(new Event('FormSubmitted'));
+            }, 2000);
+        });
+        var timeoutHandle = null;
+        var textarea = el.querySelector("textarea");
+        if (!textarea) return;
+        textarea.value = sessionStorage.getItem("contactform_text");
+        textarea.addEventListener('input', function() {
+            if (timeoutHandle)
+                window.clearTimeout(timeoutHandle);
+            timeoutHandle = window.setTimeout(() => {
+                timeoutHandle = null;
+                sessionStorage.setItem("contactform_text", textarea.value);
+            }, 2000);
+        }, false);
+    })
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // Sticky header
     const header = document.getElementById("header");
@@ -23,40 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("MainContentChanged", () => {
-        // Form submissions via ajax (need rebinding after every content change)
-        document.querySelectorAll("form.interact-form").forEach(el => {
-            el.addEventListener('submit', e => {
-                e.preventDefault();
-                var formData = new FormData(e.target);
-                var xhr = new XMLHttpRequest();
-                formData.set("form-name",e.target.name);
-                xhr.open("POST", e.target.action);
-                xhr.send(formData);
-                e.target.reset();
-                sessionStorage.removeItem("contactform_text");
-                var elemBtn = el.querySelector("button[type=submit]");
-                elemBtn.disabled = true;
-                elemBtn.dataset['otext'] = elemBtn.innerHTML;
-                elemBtn.innerHTML = elemBtn.dataset['loading'];
-                setTimeout(()=> {
-                    elemBtn.disabled = false;
-                    elemBtn.innerHTML = elemBtn.dataset['otext'];
-                    e.target.dispatchEvent(new Event('FormSubmitted'));
-                }, 2000);
-            });
-            var timeoutHandle = null;
-            var textarea = el.querySelector("textarea");
-            if (!textarea) return;
-            textarea.value = sessionStorage.getItem("contactform_text");
-            textarea.addEventListener('input', function() {
-                if (timeoutHandle)
-                    window.clearTimeout(timeoutHandle);
-                timeoutHandle = window.setTimeout(() => {
-                    timeoutHandle = null;
-                    sessionStorage.setItem("contactform_text", textarea.value);
-                }, 2000);
-            }, false);
-        })
+        interceptFormSubmissions();
     });
     document.dispatchEvent(new Event('MainContentChanged'));
     window.loaded = true;

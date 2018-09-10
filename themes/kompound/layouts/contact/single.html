@@ -7,7 +7,7 @@
       <div class="col-md-6 col-sm-12">
           <div class="block" id="contact-box" >
               <h2>{{ .addresstitle }}</h2>
-              <ul class="address-block">
+              <ul class="address-block no">
                 <li>
                   <i class="fas fa-map-marker"></i><a href="#gmap">{{ .boxaddress }}</a>
                 </li>
@@ -23,7 +23,7 @@
               </ul>
               <br>
               <h2>{{ .socialtitle }}</h2>
-              <ul class="social-icons">
+              <ul class="social-icons no">
               {{ range .boxsocial }}  
                 <li>
                   <a href="{{ .url }}"><i class="fab fa-{{ .icon }}"></i> {{ .title }}</a>

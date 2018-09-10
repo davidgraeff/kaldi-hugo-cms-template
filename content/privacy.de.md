@@ -1,5 +1,7 @@
 +++
-title = "Datenschutzerklärung Kompound.solutions"
+title = "Datenschutzerklärung"
+subtitle = "Kompound.solutions"
+tinytitle = true
 type = "legal"
 dateInfo = "Stand 14. Mai 2018"
 "call.enable" = false

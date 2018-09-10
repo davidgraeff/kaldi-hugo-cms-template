@@ -14,9 +14,11 @@
 
 {{- $bootstrapstyle := resources.Get "css/bootstrap.min.css" -}}
 {{ $mainstyle := resources.Get "css/main.css" -}}
+{{ $headerstyle := resources.Get "css/header.css" -}}
+{{ $blogstyle := resources.Get "css/blog.css" -}}
 {{ $fontsstyle := resources.Get "css/fonts.css" -}}
 {{ $flagsstyle := resources.Get "css/flag-icon.min.css" -}}
-{{ $style := slice $bootstrapstyle $mainstyle $fontsstyle $flagsstyle | resources.Concat "css/main.css" | minify | fingerprint -}}
+{{ $style := slice $bootstrapstyle $mainstyle $headerstyle $blogstyle $fontsstyle $flagsstyle | resources.Concat "css/main.css" | minify | fingerprint -}}
 
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="stylesheet" async href="/css/fontawesome.min.css">

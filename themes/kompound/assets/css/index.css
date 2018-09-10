@@ -599,6 +599,16 @@ px      68    160    252    */
     padding-top: 15px;
   }
 
+#features-contact {
+  padding-top: 50px;
+  padding-bottom: 75px;
+}
+#features-contact .block ul li {
+  width: 19%;
+  text-align: center;
+  display: inline-block;
+  padding: 40px 0px;
+}
   #features-work .block ul li {
     display: block;
     width: 100%;

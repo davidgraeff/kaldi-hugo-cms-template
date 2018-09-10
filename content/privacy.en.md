@@ -1,5 +1,7 @@
 +++
-title = "Privacy Policy Kompound.solutions"
+title = "Privacy Policy"
+subtitle = "Kompound.solutions"
+tinytitle = true
 type = "legal"
 dateInfo = "Last update May 14th, 2018"
 "call.enable" = false

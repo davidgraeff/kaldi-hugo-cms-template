@@ -59,13 +59,20 @@ defaultContentLanguage = "en"
       url = "/faq/"
 
     [[languages.en.menu.ourservices]]
-      name = "Graphic Design"
+      name = "Paperless office"
+      weight = 1
       url = "/services/#demo1"
     [[languages.en.menu.ourservices]]
-      name = "Web Design"
+      name = "Human resource planing and team communication"
+      weight = 2
+      url = "/services/#demo1"
+    [[languages.en.menu.ourservices]]
+      name = "Automation and Smart Control"
+      weight = 3
       url = "/services/#demo2"
     [[languages.en.menu.ourservices]]
-      name = "Web Development"
+      name = "IoT Device design and integration"
+      weight = 4
       url = "/services/#demo3"
 
   [languages.de]
@@ -108,7 +115,7 @@ defaultContentLanguage = "en"
       weight = 6
       name = "© 2018 Kompound solutions"
     [[languages.de.menu.quicklinks]]
-      name = "Preise"
+      name = "Kostenvoranschlag"
       url = "/quote/"
     [[languages.de.menu.quicklinks]]
       name = "Partner"
@@ -118,13 +125,20 @@ defaultContentLanguage = "en"
       url = "/faq/"
 
     [[languages.de.menu.ourservices]]
-      name = "Grafik Design"
+      name = "Papierloses Büro"
+      weight = 1
       url = "/services/#demo1"
     [[languages.de.menu.ourservices]]
-      name = "Web Design"
+      name = "Intelligente Arbeitsplanung und Team Kollaboration"
+      weight = 2
+      url = "/services/#demo1"
+    [[languages.de.menu.ourservices]]
+      name = "Automatisierung und Smarte Systemkontrolle"
+      weight = 3
       url = "/services/#demo2"
     [[languages.de.menu.ourservices]]
-      name = "Web Entwicklung"
+      name = "IoT Geräte Entwicklung und Einbindung"
+      weight = 4
       url = "/services/#demo3"
 
 [params.urls]

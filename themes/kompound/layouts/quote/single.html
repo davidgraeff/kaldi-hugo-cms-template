@@ -5,17 +5,18 @@
     <div id="quoteapp" style="width: 100%">
         <ol class="breadcrumb-arrow center-text d-print-none" v-cloak>
             <li v-for="item of $options.items" :key="item.tab" :class="{active: cstate==item.tab }">
-                <a href="#" v-html="item.text" @click.stop.prevent="clickTab(item.tab)">
+                <a href="#" v-html="tr(item,'text')" @click.stop.prevent="clickTab(item.tab)">
                 </a>
             </li>
         </ol>
+        <div class="maxw" v-if="cstate == 'intro'" v-html="$t('message.intro')"></div> 
         <determineparts v-if="cstate == 'determineparts'"></determineparts>
         <partdetails v-if="cstate == 'partdetails'"></partdetails>
         <overview v-if="cstate == 'overview'"></overview>
 
         <div class="float-right" v-cloak>
-        <b-button variant="secondary" @click="reset()" v-if="cstate != 'overview'" :disabled="pstate.count === 0">Reset</b-button>
-        <b-button variant="success" @click="goNext()" v-if="cstate != 'overview'">Weiter</b-button>
+        <b-button variant="secondary" @click="reset()" v-if="cstate != 'overview'" :disabled="pstate.count === 0" v-text="$t('button.reset')"></b-button>
+        <b-button variant="success" @click="goNext()" v-if="cstate != 'overview'" v-text="$t('button.next')"></b-button>
         </div>
     </div>
 </div></div></div></section>

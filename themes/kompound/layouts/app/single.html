@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <meta name="robots" content="noindex">
+    <title>{{ .Page.Title }}</title>
+    {{ $bootstrapstyle := resources.Get "css/bootstrap.min.css" -}}
+    {{ $mainstyle := resources.Get "css/main.css" -}}
+    {{ $flagstyle := resources.Get "css/flag-icon.min.css" -}}
+    {{ $fontsstyle := resources.Get "css/fonts.css" -}}
+    {{ $appstyle := resources.Get "css/app.css" -}}
+    {{ $styleApp := slice $bootstrapstyle $mainstyle $flagstyle $fontsstyle $appstyle | resources.Concat "css/app.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styleApp.Permalink }}">
+    <link rel="stylesheet" async href="/css/fontawesome.min.css">
+    {{ $animatestyle := resources.Get "/css/animate.css" | minify -}}
+    <link rel="stylesheet" async href="{{ $animatestyle.Permalink }}">
+    {{ $bootstrapjs := resources.Get "/js/bootstrap-native-v4.min.js" -}}
+    {{ $appjs := resources.Get "/js/app.js" -}}
+    {{- $vuejs := slice $bootstrapjs $appjs | resources.Concat "js/app.js" | minify | fingerprint }}
+    <script type='text/javascript' src="{{ $vuejs.Permalink }}"></script>
+    <style>
+        #selectlanguage i {
+            margin-right: 10px;
+        }
+        #languageselect {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal fade" id="callbackModal" tabindex="-1" role="dialog" aria-labelledby="callbackModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: black;">{{ .Page.Params.forgotten }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="interact-form" action="/contactform" data-netlify="true" name="contact" netlify-honeypot="cigarette-brand"
+                    id="callbackform">
+                    <div class="modal-body">
+                        <div class="form-group form-special">
+                            <input type="text" class="form-control" placeholder="Cigarette brand" name="cigarette-brand">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="callbackname">{{ .Params.username }}</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-user"></i></div>
+                                </div>
+                                <input required type="text" class="form-control" placeholder="{{ .Page.Params.username }}" name="fullname"
+                                    id="callbackname">
+                            </div>
+                        </div>
+                        <div style="padding-left:0;text-align:center;display:none" class="pwdwrong alert alert-info">
+                            {{ .Page.Params.pwdsend }}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ .Params.close }}</button>
+                        <button type="submit" class="btn btn-primary" data-reset="true" data-wrongid="pwdwrong" data-loading="<i class='fas fa-circle-notch fa-spin'></i>
+                            {{ i18n "transmitting" }}...">{{- .Params.submit -}}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <header>
+        <ul id="languageselect" class="float-right no">
+            {{- if .IsTranslated -}}
+            {{- range .Translations -}}
+            <li class="nav-item">
+                <a class="nav-link" id="selectlanguage" data-fullreload="true" href="{{ .Permalink }}">
+                    <i class="flag-icon flag-icon-{{ .Language.Lang }}"></i>{{- .Language.LanguageName -}}</a>
+            </li>
+            {{- end -}}
+            {{- else -}}
+            {{- range .Site.Languages -}}
+            {{- if ne $.Site.Language.Lang .Lang -}}
+            <li class="nav-item">
+                <a class="nav-link" id="selectlanguage" data-fullreload="true" rel="alternate" href="/{{ .Lang }}"
+                    hreflang="{{ .Lang }}" lang="{{ .Lang }}">
+                    <i class="flag-icon flag-icon-{{ .Lang }}"></i>{{- .Params.LanguageName -}}
+                </a>
+            </li>
+            {{- end -}}
+            {{- end -}}
+            {{ end }}
+        </ul>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="Absolute-Center is-Responsive">
+                <a href="/">
+                    <div id="logo-container"></div>
+                </a>
+                <div class="col-sm-12 col-md-10 offset-1">
+                    <form action="#/login">
+                        <div class="input-group mb-3" data-container="body" data-toggle="popover" data-placement="top"
+                            data-content="{{ .Page.Params.userinfo }}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input required class="form-control" type="text" name='username' aria-label="Username"
+                                placeholder="{{ .Page.Params.username }}" autofocus />
+                        </div>
+                        <div class="input-group mb-3" data-container="body" data-toggle="popover" data-placement="top"
+                            data-content="{{ .Page.Params.pwdinfo }}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input required class="form-control passwordfield" type="password" name='password'
+                                aria-label="Password" placeholder="{{ .Page.Params.password }}" />
+                            <div class="input-group-append dropdown" style="display: flex;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callbackModal" id="callbackModalOpen">{{ .Page.Params.forgotten }}</a>
+                                    <a class="dropdown-item" href='{{ "contact" | relLangURL }}'>{{ .Page.Params.support }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding-left:0;text-align:center;display:none" class="pwdwrong alert alert-danger">
+                            {{ .Page.Params.pwdwrong }}
+                        </div>
+                        <button rel="nofollow" type="submit" class="btn btn-success btn-lg btn-block" data-wrongid="pwdwrong"
+                        data-loading="<i class='fas fa-circle-notch fa-spin'></i> {{ i18n "transmitting" }}...">
+                        {{ .Page.Params.login }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

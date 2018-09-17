@@ -1,14 +1,16 @@
 <template>
 <div>
-    <div v-for="(group,groupid) of $root.$options.products.groups" :key="groupid" id="determineparts" class="maxw">
+    <div class="maxw" v-html="$t('message.determineparts')"></div>
+    <div v-for="(group,groupid) of $root.$options.products.groups" :key="groupid" id="determineparts" class="maxw" v-if="!group.noshow">
         <span class="h1">{{ $root.tr(group,"text") }}</span><br><small>{{ $root.tr(group,"desc") }}</small>
         <div class="card-deck p-4">
-            <a href="#" v-for="(task,taskid) of $root.$options.products.tasks" :key="task.id" v-if="task.gid == groupid"
-                @click.prevent="add(task, taskid, groupid)" class="card" :class="{active: $root.pstate.tasks[groupid][taskid]}" v-b-tooltip.hover.bottom :title="$root.tr(task,'tooltip')">
+            <a href="#" v-for="(task,taskid) of $root.$options.products.tasks" :key="task.id"
+            v-if="task.gid == groupid && !task.noshow"
+                @click.prevent="$root.add(task, taskid, groupid)" class="card" :class="{active: $root.pstate.tasks[groupid][taskid]}" v-b-tooltip.hover.bottom :title="$root.tr(task,'tooltip')">
                 <img class="card-img-top p-3" :src="'/img/icons/'+task.icon" onload="inlineSVG(this)">
                 <center class="card-title">{{ $root.tr(task,"text") }}</center>
-                <button type="button" class="btn btn-danger btn-sm" v-if="$root.pstate.tasks[groupid][taskid]" @click.prevent.stop="remove(task, taskid, groupid)">
-                Remove <span class="badge badge-light">{{ $root.pstate.tasks[groupid][taskid].length }}</span>
+                <button type="button" class="btn btn-danger btn-sm" v-if="$root.pstate.tasks[groupid][taskid]" @click.prevent.stop="$root.remove(taskid, groupid)">
+                Remove <span class="badge badge-light">{{ $root.$options.products.tasks[taskid].singleconfig ? $root.pstate.tasks[groupid][taskid][0]._count : $root.pstate.tasks[groupid][taskid].length }}</span>
                 <span class="sr-only">unread messages</span>
                 </button>
             </a>
@@ -28,38 +30,7 @@ module.exports = {
         },
      },
      methods: {
-         add: function(task,taskid,groupid) {
-            if (!this.$root.pstate.tasks[groupid][taskid])
-                Vue.set(this.$root.pstate.tasks[groupid], taskid, []);
 
-            var max = Number.isInteger(task.max) ? task.max : 1000;
-            if (this.$root.pstate.tasks[groupid][taskid].length >= max) return;
-
-            const componentIds = this.$root.$options.products.tasks[taskid].items;
-            var instance = {};
-            for (let cid of componentIds) {
-                const c = this.$root.$options.products.components.find(e => e.id == cid);
-                if (!c) {
-                    console.error("Index not found", cid);
-                    continue;
-                }
-                if (c.range) instance[cid] = c.default ? c.default : c.range[0];
-                else if (c.enum) instance[cid] = c.default ? c.default : 0;
-                else instance[cid] = c.default ? c.default : false;
-            }
-            this.$root.pstate.tasks[groupid][taskid].push(instance);
-                
-            this.$root.pstate.count++;
-         },
-         remove: function(task,taskid,groupid) {
-            if (!this.$root.pstate.tasks[groupid][taskid]) return;
-            if (this.$root.pstate.tasks[groupid][taskid].length === 1) {
-                Vue.delete(this.$root.pstate.tasks[groupid], taskid);
-            } else {
-                this.$root.pstate.tasks[groupid][taskid].pop();
-            }
-            if (this.$root.pstate.count) this.$root.pstate.count--;
-        }
      },
     created: function () {
 

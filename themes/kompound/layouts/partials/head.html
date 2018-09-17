@@ -2,15 +2,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{ if or (isset .Params "robots") (isset .Site.Params "robots") -}}
-    <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}{{ .Site.Params.robots }}{{ end }}">
-    {{- end -}}
-
     <link rel='shortcut icon' type='image/png' href='/img/favicon.png' />
     <link rel="apple-touch-icon" href="/img/favicon.png"> 
-
-    <title>{{ .Title }}</title>
-    {{ .Hugo.Generator }}
+    <title>{{- .Title -}}</title>
+    {{- .Hugo.Generator -}}
 
 {{- $bootstrapstyle := resources.Get "css/bootstrap.min.css" -}}
 {{ $mainstyle := resources.Get "css/main.css" -}}
@@ -20,10 +15,10 @@
 {{ $flagsstyle := resources.Get "css/flag-icon.min.css" -}}
 {{ $style := slice $bootstrapstyle $mainstyle $headerstyle $blogstyle $fontsstyle $flagsstyle | resources.Concat "css/main.css" | minify | fingerprint -}}
 
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{- $style.Permalink -}}">
     <link rel="stylesheet" async href="/css/fontawesome.min.css">
 {{ $animatestyle := resources.Get "css/animate.css" | minify -}}
-    <link rel="stylesheet" async href="{{ $animatestyle.Permalink }}">
+    <link rel="stylesheet" async href="{{- $animatestyle.Permalink -}}">
 
 {{- $waypointsjs := resources.Get "js/noframework.waypoints.min.js" -}}
 {{ $sliderjs := resources.Get "/js/tiny-slider.min.js" -}}
@@ -32,29 +27,31 @@
 {{ $mainjs := resources.Get "/js/main.js" -}}
 
 {{- $js := slice $waypointsjs $sliderjs $bootstrapjs $localpurechatjs $mainjs | resources.Concat "js/main.js" | minify }}
-    <script type='text/javascript' src="{{ $js.Permalink }}"></script>
+    <script type='text/javascript' src="{{- $js.Permalink -}}"></script>
     <script type='text/javascript' src="/js/WidgetScript.js" async onload="loadWidget()"></script>
 
 {{ $markjs := resources.Get "/js/mark.min.js" -}}
 {{ $fusejs := resources.Get "/js/fuse.min.js" -}}
 {{- $searchjs := slice $markjs $fusejs | resources.Concat "js/search.js" | minify }}
-    <!--<script type='text/javascript' src="{{ $searchjs.Permalink }}" async></script>-->
+    <!--<script type='text/javascript' src="{{- $searchjs.Permalink -}}" async></script>-->
     
     {{ $vuejs := resources.Get "/js/vue.dev.js" -}}
+    {{ $vuei18n := resources.Get "/js/vue-i18n.js" -}}
     {{ $vueBootstrap := resources.Get "/js/vueBootstrap.js" -}}
     {{ $httpVueLoader := resources.Get "/js/httpVueLoader.js" -}}
-    {{- $vuejs := slice $vuejs $vueBootstrap $httpVueLoader | resources.Concat "js/vue.js" | minify | fingerprint }}
+    {{- $vuejs := slice $vuejs $vuei18n $vueBootstrap $httpVueLoader | resources.Concat "js/vue.js" | minify | fingerprint }}
     
     <link rel="subresource" href="{{ $vuejs.Permalink }}">
     <link rel="subresource" href="/js/quote.js">
     <script>
         [
-        {m:false, s:'{{ $vuejs.Permalink }}'},
+        {m:false, s:'{{ $vuejs.Permalink }}', load:"Vue.config.productionTip = false;"},
         {m:true, s:'/js/quote.js'},
         ].forEach(function(item) {
         var script = document.createElement('script');
         script.src = item.s;
         script.async = false;
+        if (item.load) script.onload = function() { eval(item.load);}
         if (item.m) script.type = "module";
         document.head.appendChild(script);
         });

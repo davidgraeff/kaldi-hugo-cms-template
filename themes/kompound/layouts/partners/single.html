@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{ partial "big-page-title.html" . }}
+
+<style>
+    .partnercard {
+        transition: box-shadow 0.5s;
+    }
+    .partnercard:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    @media(max-width:768px) {
+        .partnercard picture, .partnercard img {
+            height: 100px;
+            width: initial;
+        }
+        .partnercard:hover {
+            box-shadow: none;
+        }
+    }
+
+    .partnercard > .card-body {
+        display: flex;
+    }
+    .partnercard > .card-body > img {
+        height: 120px;
+        width:200px;
+        object-fit: contain;
+    }
+</style>
+
+<!-- Portfolio Start -->
+<section class="section">
+<div class="container"><div class="row"><div class="col-md-12">
+    {{ range .Page.Params.partners }}
+    <div class="card-deck">
+      <div class="card partnercard mb-3" id="{{ .id }}">
+          <div class="card-header">{{ .title }}</div>
+          <div class="card-body">
+            <img class="img pr-3" src="{{ .logo }}" >
+            <div>
+                <a href="{{ .url }}"><h5 class="card-title">{{ .desc }}</h5></a>
+                <p class="card-text">{{ .text }}</p>
+                <small class="card-text text-muted">{{ i18n "partner_since" }} {{ .since }}</small>
+            </div>
+          </div>
+      </div>
+    </div>
+    {{ end }}
+  </div></div>
+</div>
+</section>
+
+{{ end}}

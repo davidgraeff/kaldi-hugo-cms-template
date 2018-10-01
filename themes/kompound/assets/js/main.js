@@ -35,6 +35,37 @@ function interceptFormSubmissions() {
     })
 }
 
+function loadUrl(newUrl) {
+    fetch(newUrl)
+    .then(response => {
+        if(response.ok)
+            return response.text();
+        throw new Error('Network response was not ok.',response);
+    })
+    .then(text => new DOMParser().parseFromString(text, "text/html"))
+    .then(doc => {
+        if (doc === null) return;
+
+        var newContent = doc.getElementById("mainContent");
+        var elemLanguage = doc.getElementById("selectlanguage");
+        if (newContent === null || elemLanguage === null) return;
+
+        document.title = doc.title;
+        document.getElementById("mainContent").replaceWith(newContent);
+        document.getElementById("selectlanguage").replaceWith(elemLanguage);
+
+        document.dispatchEvent(new Event('MainContentChanged'));
+
+        var elem = (newUrl.hash) ? document.getElementById(newUrl.hash.replace("#","")) : null;
+        if (elem)
+            elem.scrollIntoView({ behavior: 'smooth' });
+        else
+            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    }).catch(function(error) {
+        console.log('Fetch failed: ', error.message);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // Sticky header
     const header = document.getElementById("header");
@@ -57,6 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const sh = 'scrollHeight';
       var scroll = (document.documentElement[st]||document.body[st]) / ((document.documentElement[sh]||document.body[sh]) - document.documentElement.clientHeight) * 100;
       progress.style.setProperty('--scroll', scroll + '%');
+    });
+
+    window.addEventListener("popstate", () => {
+        loadUrl(new URL(document.location));
     });
 
     document.addEventListener("MainContentChanged", () => {
@@ -82,34 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 event.preventDefault(); // Same url -> do nothing
         } else {
             event.preventDefault();
-            fetch(newUrl)
-            .then(response => {
-                if(response.ok)
-                    return response.text();
-                throw new Error('Network response was not ok.',response);
-            })
-            .then(text => new DOMParser().parseFromString(text, "text/html"))
-            .then(doc => {
-                if (doc === null) return;
-
-                var newContent = doc.getElementById("mainContent");
-                var elemLanguage = doc.getElementById("selectlanguage");
-                if (newContent === null || elemLanguage === null) return;
-
-                document.title = doc.title;
-                document.getElementById("mainContent").replaceWith(newContent);
-                document.getElementById("selectlanguage").replaceWith(elemLanguage);
-
-                document.dispatchEvent(new Event('MainContentChanged'));
-
-                window.scroll({
-                    top: 0, 
-                    left: 0, 
-                    behavior: 'smooth' 
-                  });
-            }).catch(function(error) {
-                console.log('Fetch failed: ', error.message);
-            });
+            loadUrl(newUrl);
             history.pushState(null /*stateObj*/, "" /*title*/, newUrl);
         }
     })
@@ -119,7 +127,7 @@ window.inlineSVG = function(img) {
     var imgID = img.id;
     var imgClass = img.className;
     var imgURL = img.src;
-    fetch(imgURL).then(response => response.text()).then(text=>{
+    return fetch(imgURL).then(response => response.text()).then(text=>{
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(text, "text/xml");
         var svg = xmlDoc.getElementsByTagName('svg')[0];
@@ -132,5 +140,6 @@ window.inlineSVG = function(img) {
             svg.setAttribute('viewBox', '0 0 ' + svg.getAttribute('height') + ' ' + svg.getAttribute('width'))
         }
         img.parentNode.replaceChild(svg, img);
+        return svg;
     });
 }

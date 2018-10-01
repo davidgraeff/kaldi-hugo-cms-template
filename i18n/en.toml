@@ -18,3 +18,18 @@ other = "Our services"
 
 [transmitting]
 other = "Transmitting"
+
+[notacustomeryet]
+other = "Not a customer yet? See how the workflow and contract management works with us"
+
+[project_milestones]
+other = "Project milestones / status"
+
+[project_contracts]
+other = "Contracts / Invoices"
+
+[project_report]
+other = "Report a product issue"
+
+[partner_since]
+other = "Partner since"

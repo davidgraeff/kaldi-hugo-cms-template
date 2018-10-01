@@ -22,7 +22,7 @@ defaultContentLanguage = "en"
       url = "/blog/"
     [[languages.en.menu.header]]
       weight = 3
-      name = "Service"
+      name = "Solutions"
       url = "/service/"
     [[languages.en.menu.header]]
       weight = 5
@@ -61,19 +61,19 @@ defaultContentLanguage = "en"
     [[languages.en.menu.ourservices]]
       name = "Paperless office"
       weight = 1
-      url = "/services/#demo1"
+      url = "/service/#paperless"
     [[languages.en.menu.ourservices]]
       name = "Human resource planing and team communication"
       weight = 2
-      url = "/services/#demo1"
+      url = "/service/#workschedule"
     [[languages.en.menu.ourservices]]
       name = "Automation and Smart Control"
       weight = 3
-      url = "/services/#demo2"
+      url = "/service/#automation"
     [[languages.en.menu.ourservices]]
       name = "IoT Device design and integration"
       weight = 4
-      url = "/services/#demo3"
+      url = "/service/#iot"
 
   [languages.de]
   weight = 10
@@ -84,11 +84,11 @@ defaultContentLanguage = "en"
       url = "/"
     [[languages.de.menu.header]]
       weight = 6
-      name = "Developer corner"
+      name = "Entwicklerblog"
       url = "/blog/"
     [[languages.de.menu.header]]
       weight = 3
-      name = "Services"
+      name = "Dienstleistungen"
       url = "/service/"
     [[languages.de.menu.header]]
       weight = 5
@@ -127,19 +127,19 @@ defaultContentLanguage = "en"
     [[languages.de.menu.ourservices]]
       name = "Papierloses Büro"
       weight = 1
-      url = "/services/#demo1"
+      url = "/service/#paperless"
     [[languages.de.menu.ourservices]]
       name = "Intelligente Arbeitsplanung und Team Kollaboration"
       weight = 2
-      url = "/services/#demo1"
+      url = "/service/#workschedule"
     [[languages.de.menu.ourservices]]
       name = "Automatisierung und Smarte Systemkontrolle"
       weight = 3
-      url = "/services/#demo2"
+      url = "/service/#automation"
     [[languages.de.menu.ourservices]]
       name = "IoT Geräte Entwicklung und Einbindung"
       weight = 4
-      url = "/services/#demo3"
+      url = "/service/#iot"
 
 [params.urls]
   demologin = "/demologin"
@@ -196,7 +196,7 @@ defaultContentLanguage = "en"
     formtel = "Phone Number"
     formsubject = "(Optional) Subject"
     formtime = "Preferred time"
-    formtoday = "Today"
+    formtoday = "Sometime today"
     [languages.en.params.call.btnRequestQuote]
       msg = "Request an instant, no-obligation quote"
       caption = "Get a quote!"
@@ -219,7 +219,7 @@ defaultContentLanguage = "en"
     formtel = "Telefonnummer"
     formsubject = "(Optional) Thema"
     formtime = "Wunschzeit"
-    formtoday = "Heute"
+    formtoday = "Heute, nächst mögliche Zeit"
     [languages.de.params.call.btnRequestQuote]
       msg = "Request an instant, no-obligation quote"
       caption = "Unverbindlicher Kostenrechner"

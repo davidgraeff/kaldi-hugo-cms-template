@@ -4,8 +4,8 @@
             <div class="col-md-12">
                 <div class="block">
                     <h1>{{ .Title }}</h1>
-                    <p>{{ .Params.subtitle }}</p>
                 </div>
+                {{ safeHTML .Params.subtitle }}
             </div>
         </div>
     </div>

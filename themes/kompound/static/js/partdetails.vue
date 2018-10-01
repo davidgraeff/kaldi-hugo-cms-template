@@ -4,7 +4,7 @@
 <div v-for="(taskByGroup, groupid) of $root.pstate.tasks" :key="groupid" id="partdetails" class="maxw" v-if="Object.keys(taskByGroup).length>0" >
     <span class="h1">{{ $root.tr($root.$options.products.groups[groupid],"text") }}</span><br v-if="$root.hastr($root.$options.products.groups[groupid],'desc')"><small>{{ $root.tr($root.$options.products.groups[groupid],"desc") }}</small>
     <div class="card-deck mb-4">
-    <div v-for="(taskinstances, taskid) of taskByGroup" :key="taskid" class="card mt-3" v-if="listtask(taskid)"><span v-for="(taskInstance, instanceID) of taskinstances" :key="instanceID">
+    <template v-for="(taskinstances, taskid) of taskByGroup" v-if="listtask(taskid)"><span v-for="(taskInstance, instanceID) of taskinstances" :key="taskid-instanceID" class="card mt-3" >
         <div class="card-header">
             {{ $root.tr($root.$options.products.tasks[taskid],"text") }}
             <div v-if="!$root.$options.products.tasks[taskid].noshow" class="float-right">
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="card-footer text-right"><span v-t="'message.subtotal'"></span>: {{ $root.partcost(taskInstance) }}€</div>
-    </span></div>
+    </span></template>
     </div>
 </div>
 </div>

@@ -19,6 +19,7 @@
     <link rel="stylesheet" async href="/css/fontawesome.min.css">
 {{ $animatestyle := resources.Get "css/animate.css" | minify -}}
     <link rel="stylesheet" async href="{{- $animatestyle.Permalink -}}">
+    <link rel="stylesheet" async href="/css/calltoaction.css">
 
 {{- $waypointsjs := resources.Get "js/noframework.waypoints.min.js" -}}
 {{ $sliderjs := resources.Get "/js/tiny-slider.min.js" -}}

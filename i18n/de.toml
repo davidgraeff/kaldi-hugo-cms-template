@@ -18,3 +18,18 @@ other = "Unsere Dienstleistungen"
 
 [transmitting]
 other = "Daten übermitteln"
+
+[notacustomeryet]
+other = "Noch kein Kunde? Sehen Sie sich an, wie Sie einfach Verträge und Aufträge mit uns handhaben"
+
+[project_milestones]
+other = "Projekt Status / Entwicklungsstufen"
+
+[project_contracts]
+other = "Aufträge / Rechnungen"
+
+[project_report]
+other = "Unerwartetes Programmverhalten melden"
+
+[partner_since]
+other = "Partner seit"

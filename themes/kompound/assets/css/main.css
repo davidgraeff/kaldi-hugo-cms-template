@@ -11,6 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 main {
   flex: 1 0 auto;
@@ -75,7 +76,7 @@ label {
   margin-bottom: 0;
 }
 #mainContent {
-  margin-top: 80px;
+  margin-top: 76px;
 }
 
 .section{
@@ -272,7 +273,7 @@ label {
 
 .breadcrumb-arrow li a:focus:before,
 .breadcrumb-arrow li a:hover:before {
-    border-left-color: rgb(87, 121, 47);
+    border-left-color: #57792f;
 }
 
 .breadcrumb-arrow li a:active {

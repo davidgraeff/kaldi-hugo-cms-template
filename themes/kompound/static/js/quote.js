@@ -24,9 +24,11 @@ function loadQuoteApp() {
         },
         message: {
             intro: `<p>Choose project parts and requirements simply via click. Press Next to continue.</p>`,
-            determineparts: `<p>Select your solution components by clicking on them. You can click multiple times on an item. Some items can be added a limited time only though.</p>
+            determineparts: `<p>What do you require for your solution? Simply click a component one time or multiple times to add it once or multiple times to your order.
+            Some services can be offered up to a limit per order only.</p>
             <p>Press Next to continue.</p>`,
-            partselect: `<p>Configure some details of your selected components.</p>
+            partselect: `<p>You need a mobile App for your solution? As you can imagine, we can't provide you an accurate quote without knowing some more details.
+            Tell us about indivial product parts, like graphical interface complexity, software/hardware features and so on.</p>
             <p>Press Next to continue.</p>`,
             subtotal: "Sub-total",
             total: "Total",
@@ -256,6 +258,11 @@ function loadQuoteApp() {
                 console.log("click",item);
                 this.cstate = item;
                 history.pushState(null, "", "#"+item);
+                window.scroll({
+                    top: 0, 
+                    left: 0, 
+                    behavior: 'smooth' 
+                  });
             },
             changeTab: function() {
                 var startTab = this.$options.items.find(e => '#'+e.tab === window.location.hash);

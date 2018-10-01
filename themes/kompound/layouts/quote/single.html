@@ -9,7 +9,7 @@
                 </a>
             </li>
         </ol>
-        <div class="maxw" v-if="cstate == 'intro'" v-html="$t('message.intro')"></div> 
+        <div class="maxw text-center" v-if="cstate == 'intro'" v-html="$t('message.intro')"></div> 
         <determineparts v-if="cstate == 'determineparts'"></determineparts>
         <partdetails v-if="cstate == 'partdetails'"></partdetails>
         <overview v-if="cstate == 'overview'"></overview>

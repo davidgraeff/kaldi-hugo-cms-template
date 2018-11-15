@@ -56,6 +56,8 @@ function loadUrl(newUrl) {
 
         document.dispatchEvent(new Event('MainContentChanged'));
 
+        location.hash = newUrl.hash;
+
         var elem = (newUrl.hash) ? document.getElementById(newUrl.hash.replace("#","")) : null;
         if (elem)
             elem.scrollIntoView({ behavior: 'smooth' });
@@ -115,6 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // Only anchor changed -> default behaviour
             if (newUrl.hash === window.location.hash)
                 event.preventDefault(); // Same url -> do nothing
+            else {
+                location.hash = newUrl.hash;
+                location.reload();
+            }
         } else {
             event.preventDefault();
             loadUrl(newUrl);

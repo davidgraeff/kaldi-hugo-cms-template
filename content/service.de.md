@@ -26,9 +26,21 @@ main = """
         Ein interaktives Fragen- und Antwortsystem, editierbarer Inhalt und einfache Moderation lassen Ihr digitales Wissensmanagment schnell
         hilfreich für neue und alteingessesene Mitarbeiter werden.</li>
 </ul>
+<div class="mb-2">Personalzuweisung und Schichtdienstplanung kann schnell kompliziert werden,
+wenn Urlaub, Elternschaft, Resourcen wie Dienstwagen oder Arbeitsmittel und Präferenzen berücksichtigt werden müssen.</div>
+<div class="mb-2">Wir entwickeln für Ihren Bereich eine Maßgeschneiderte, Mitarbeiterfreundliche und erweiterbare Lösung.</div>
+<ul>
+    <li>Text, Foto, Video Dokumentation von Ereignissen während der Schicht oder im Außendienst: Für Protokolzwecke oder die Schichtübergabe.</li>
+    <li>Automatischer Vorschlag für Ersatzmitarbeiter bei Mitarbeiterausfall.</li>
+    <li>Schichtübergabe vollständig digital, durch Fingerabdruck oder Passwort bestätigt.</li>
+    <li>Schichttausch innerhalb eines Teams in Selbstorganisiation.</li>
+    <li>Informationen wie Orte, Zeitplanung und Medien einfach einem Mitarbeiter oder Tätigkeitszeitraum von jedem PC oder Mobilgerät zuweisen.</li>
+    <li>Automatischer geführter Stundenzettel für nächsten Abrechnungszeitraum abrufbar.</li>
+    <li>(Echtzeit) Kommunikation innerhalb eines Teams</li>
+</ul>
 """
-img1 = "/img/blur-close-up-composition-273015.jpg"
-img2 = "/img/blur-close-up-composition-273015.jpg"
+img1 = "/img/collaboration-community-cooperation-872955.webp"
+img2 = "/img/collaboration-community-cooperation-872955.jpg"
 
 [[services.icons]]
 icon = "/img/icons/analytics.svg"
@@ -69,41 +81,11 @@ icon = "/img/icons/coaching.svg"
 title = "Schulung"
 text = "Durch eine Aufgabenorientierte, geführte Schulung sind Ihre Mitarbeiter schnell vertraut mit neu eingeführter Software."
 
-[[services]]
-id = "workschedule"
-header = "Intelligente Arbeitsplanung und Team Kollaboration"
-main = """
-<div class="mb-2">Personalzuweisung und Schichtdienstplanung kann schnell kompliziert werden,
-wenn Urlaub, Elternschaft, Resourcen wie Dienstwagen oder Arbeitsmittel und Präferenzen berücksichtigt werden müssen.</div>
-<div class="mb-2">Wir entwickeln für Ihren Bereich eine Maßgeschneiderte, Mitarbeiterfreundliche und erweiterbare Lösung.</div>
-<ul>
-    <li>Text, Foto, Video Dokumentation von Ereignissen während der Schicht oder im Außendienst: Für Protokolzwecke oder die Schichtübergabe.</li>
-    <li>Automatischer Vorschlag für Ersatzmitarbeiter bei Mitarbeiterausfall.</li>
-    <li>Schichtübergabe vollständig digital, durch Fingerabdruck oder Passwort bestätigt.</li>
-    <li>Schichttausch innerhalb eines Teams in Selbstorganisiation.</li>
-    <li>Informationen wie Orte, Zeitplanung und Medien einfach einem Mitarbeiter oder Tätigkeitszeitraum von jedem PC oder Mobilgerät zuweisen.</li>
-    <li>Automatischer geführter Stundenzettel für nächsten Abrechnungszeitraum abrufbar.</li>
-    <li>(Echtzeit) Kommunikation innerhalb eines Teams</li>
-</ul>
-"""
-img1 = "/img/collaboration-community-cooperation-872955.webp"
-img2 = "/img/collaboration-community-cooperation-872955.jpg"
-
 [[services.icons]]
 icon = "/img/icons/workflow.svg"
 title = "Personal- und Resourcenplanung"
 text = "Ausfallsichere, digitale Planungssoftware mit wahlweiser Möglichkeit zur Selbstorganisation, gekoppelter Zugangskontrolle und automatisch geführten Stundenzetteln."
 links = { "Mehr details" = "/de/human_resource_management"}
-
-[[services.icons]]
-icon = "/img/icons/smartphone.svg"
-title = "Schulung"
-text = "Durch eine praxisorientierte Schulung sind Ihre Mitarbeiter schnell vertraut mit neu eingeführter Software."
-
-[[services.icons]]
-icon = "/img/icons/chatting.svg"
-title = "(Echtzeit) Kommunikation"
-text = "Durch eine Kommunikationskomponente in Ihrer Anwendung regen Sie den beruflichen Austausch zwischen Mitarbeitern an und verstärken Kundenbeziehungen."
 
 [[services]]
 id = "automation"

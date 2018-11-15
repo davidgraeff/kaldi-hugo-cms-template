@@ -11,7 +11,7 @@
     </div>
     <script src="/js/cookie-message.js" async></script>
 
-<div class="container">
+<div class="container-header">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="d-flex flex-grow-1">
       <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
@@ -25,45 +25,33 @@
     </div>
       <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto flex-nowrap">
-        {{- range $p :=  .Site.Menus.header -}}
-          {{- $isDone := false -}}
-          <li class="nav-item">
-            {{- range $i := $.Site.AllPages -}}
-              {{- if not ($isDone) -}}
-                {{- if eq (string $i.RelPermalink) (string $p.URL) -}}
-                  {{- $isDone := true -}}
-                  {{- if eq (len $i.Translations) 0 -}}
-                  <a class="nav-link" href="{{ $p.URL }}">
-                    {{- if ne (string $.Lang) "en" -}}
-                    <i class="flag-icon flag-icon-en"></i>
-                    {{- end -}}
-                    {{ $p.Name }}</a>
+            {{- range $p :=  .Site.Menus.header -}}
+            <li class="nav-item">
+                {{ $fixedlang := replaceRE "^/([^/]+)/([^/]+)/|.*" "$1" $p.URL }}
+                {{- if eq $fixedlang "" -}}
+                  <a class="nav-link text-nowrap" href="{{ $p.URL | relLangURL }}">{{ $p.Name }}</a>
                   {{- else -}}
-                    {{- $tr := index $i.Translations 0 -}}
-                    {{- if eq (string $tr.Lang) "de" -}}
-                    <a class="nav-link" href="{{ $p.URL | relLangURL }}">{{ $p.Name }}</a>
-                    {{- else -}}
-                    <a class="nav-link" href="{{ $p.URL }}">{{ $p.Name }}</a>
-                    {{- end -}}
-                  {{- end -}}
+                  <a class="nav-link text-nowrap" href="{{ $p.URL }}">
+                      {{- if ne (string $.Lang) $fixedlang -}}
+                      <i class="flag-icon flag-icon-{{ $fixedlang }} d-none d-lg-inline-block"></i>
+                      {{- end -}}
+                    {{ $p.Name }}
+                  </a>
                 {{- end -}}
-              {{- end -}}
+              </li>
             {{- end -}}
-            
-          </li>
-        {{ end }}
         {{- if .IsTranslated -}}
             {{- range .Translations -}}
             <li class="nav-item">
-                <a class="nav-link" id="selectlanguage" data-fullreload="true" href="{{ .Permalink }}"> <i class="flag-icon flag-icon-{{ .Language.Lang }}"></i>{{- .Language.LanguageName -}}</a>
+                <a class="nav-link text-nowrap" id="selectlanguage" data-fullreload="true" href="{{ .Permalink }}"> <i class="flag-icon flag-icon-{{ .Language.Lang }}"></i>{{- .Language.LanguageName -}}</a>
             </li>
             {{- end -}}
         {{- else -}}
           {{- range .Site.Languages -}}
             {{- if ne $.Site.Language.Lang .Lang -}}
             <li class="nav-item">
-              <a class="nav-link" id="selectlanguage"  data-fullreload="true" rel="alternate" href="/{{ .Lang }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
-                <i class="flag-icon flag-icon-{{ .Lang }}"></i>{{- .Params.LanguageName -}}
+              <a class="nav-link text-nowrap" id="selectlanguage"  data-fullreload="true" rel="alternate" href="/{{ .Lang }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
+                <i class="flag-icon flag-icon-{{ .Lang }} d-none d-lg-inline-block"></i>{{- .Params.LanguageName -}}
               </a>
             </li>
             {{- end -}}

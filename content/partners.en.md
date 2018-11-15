@@ -5,7 +5,7 @@ type = "partners"
 
 [[partners]]
 id="pcb"
-logo="/img/kuttig-logo.png"
+logo="/img/partners/kuttig-logo.png"
 title="Kuttig Elektronik"
 desc="PCB manufacturing and component placement"
 url="https://www.kuttig.de/ems-dienstleistungen/leiterplattenbestueckung.html"
@@ -14,7 +14,7 @@ since="July, 2018"
 
 [[partners]]
 id="case"
-logo="/img/Protolabs-logo-tagline.svg"
+logo="/img/partners/Protolabs-logo-tagline.svg"
 title="Protolabs"
 desc="Thermoplastic Injection Moulding"
 url="https://www.protolabs.de/services/spritzguss/kunststoff-spritzguss/"
@@ -23,7 +23,7 @@ since="July, 2018"
 
 [[partners]]
 id="backup"
-logo="/img/veritas-backup.jpg"
+logo="/img/partners/veritas-backup.jpg"
 title="Veritas Backup Exec"
 desc="Backup and restoring software"
 url="https://www.veritas.com/de/de/product/backup-and-recovery/backup-exec/offers"

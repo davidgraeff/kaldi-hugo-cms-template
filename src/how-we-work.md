@@ -52,7 +52,7 @@ Modern project management and ongoing progress tracking
 We think you should have a transparent view on what is going on with your product and what our developers are going to tackle next.
 
 Our head of project management will contact you personally to devide your ideas into smaller sub-parts, the project milestones.
-Book developer hours in a flexible way in your personal project progress dashboard or with a simple phone call to increase/decrease developer pace.
+Book developer hours in a flexible way in your personal project progress dashboard or with a simple phone call to increase/decrease development pace.
 You like what we have done so far, but you have forgotten to tell us about this one missing, unique feature? You can easily extend a contract by additional milestones within your personal dashboard.
 
 Your early access to the live sources of your next product and a daily build prototype allow your in-house testers to track the overall progress and file issues early in the development cycle. [Our build pipeline is suitable for Android Apps, Static and single page html applications, Linux/MacOs/Windows binaries.]

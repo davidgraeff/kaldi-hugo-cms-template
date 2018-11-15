@@ -33,3 +33,15 @@ other = "Report a product issue"
 
 [partner_since]
 other = "Partner since"
+
+[socialtitle]
+other = "Social media"
+
+[fax]
+other = "Fax"
+
+[email]
+other = "Email"
+
+[phone]
+other = "Phone"

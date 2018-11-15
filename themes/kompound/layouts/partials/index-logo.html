@@ -1,11 +1,18 @@
-<section id="slider">
+<section id="slider" class="loadingslider">
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-1">
                 <div class="block text-center">
                     {{ with .Site.Params.slider }}
-                    <h1 class="animated fadeInUp text-uppercase">{{ safeHTML .title }}</h1>
-                    <p class="animated fadeInUp">{{ safeHTML .subtitle }}</p>
+                    <img class="animated fadeInUp mainlogo" src="/img/mainlogo_shadow2.svg">
+                    <p class="animated fadeInUp">
+                        {{- safeHTML .subtitle -}}
+                    </p>
+                    <div class="animated fadeInUp descriptions">
+                        <div><img src="/img/office.png"><br>{{- safeHTML .p1 -}}</div>
+                        <div><img src="/img/automation.png"><br>{{- safeHTML .p2 -}}</div>
+                        <div><img src="/img/iot.png"><br>{{- safeHTML .p3 -}}</div>
+                    </div>
                     {{ end }}
                 </div>
             </div>

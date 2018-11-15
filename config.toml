@@ -19,7 +19,7 @@ defaultContentLanguage = "en"
     [[languages.en.menu.header]]
       weight = 6
       name = "Developer corner"
-      url = "/blog/"
+      url = "/de/blog/"
     [[languages.en.menu.header]]
       weight = 3
       name = "Solutions"
@@ -85,7 +85,7 @@ defaultContentLanguage = "en"
     [[languages.de.menu.header]]
       weight = 6
       name = "Entwicklerblog"
-      url = "/blog/"
+      url = "/de/blog/"
     [[languages.de.menu.header]]
       weight = 3
       name = "Dienstleistungen"
@@ -151,6 +151,7 @@ defaultContentLanguage = "en"
   email = "<a href='mailto:support@kompound.solutions'>support@kompound.solutions</a>"
   phone = "<a href='tel:+491632662555'>+49 163 266 2555</a>"
   fax = "<a href='fax:+4932223942249'>+49 32223 942 249</a>"
+  boxaddress = "Am Zehnthof, 45307 Essen"
 
 # The site's parameters
 [languages.de.params]
@@ -167,11 +168,17 @@ defaultContentLanguage = "en"
 
   [languages.en.params.slider]
     title = "A digital marketing &amp; design agency"
-    subtitle = "We love the Web and the work we do.<br/>We work closely with our clients to deliver the best possible solutions for their needs"
+    subtitle = "Your IT solutions partner for"
+    p1 = "Workstations"
+    p2 = "Automation"
+    p3 = "Internet of Things"
 
   [languages.de.params.slider]
     title = "A digital marketing &amp; design agency"
-    subtitle = "We love the Web and the work we do.<br/>We work closely with our clients to deliver the best possible solutions for their needs"
+    subtitle = "Ihr zuverlässiger IT Partner im Bereich"
+    p1 = "Office"
+    p2 = "Automatisierung"
+    p3 = "dem Internet der Dinge"
 
   [languages.en.params.feature]
     title = "AWe believe in great ideas"

@@ -7,11 +7,18 @@ function muo(selectorQuery, trFun) {
     });
 }
 function applyTranslation() {
+    console.log("TRANSLATE");
     muo('.purechat-widget-title-link', e=>e.textContent="Kontaktieren Sie uns")
     muo('.purechat-enterinfo-container p',
         e=>e.textContent="Geben Sie Ihre Daten ein um den Chat zu starten");
-    muo('input.purechat-btn[type=submit]', e=>e.value="Chat starten");
-}
+    muo('input.purechat-btn[type=submit]', e=>{
+        console.log("translate", e.value);
+        if (e.value==="Send Email")
+            e.value="E-Mail senden";
+        else
+            e.value="Chat starten";
+    });
+} 
 NodeList.prototype.forEach = Array.prototype.forEach;
 
 window.loadWidget = function loadWidget() {

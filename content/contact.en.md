@@ -8,11 +8,7 @@ formmessage = "Your message"
 formbutton = "Send message"
 formsuccess = "Successfully send"
 addresstitle = "Your partner near you"
-boxaddress = "Am Zehnthof, 45307 Essen"
-boxemail = "Email"
-boxphone = "Phone"
-boxfax = "Fax"
-socialtitle = "Social media"
+
 [[boxsocial]]
 url = "https://davidgraeff.github.com"
 icon = "github"

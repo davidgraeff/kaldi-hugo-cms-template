@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1900">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml" style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  <span style="color: #00cd00">function</span> <span style="color: #cccccc">warn</span> <span style="color: #cccccc">(msg,</span> <span style="color: #cccccc">err)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(</span><span style="color: #cdcd00">typeof</span> <span style="color: #cccccc">console</span> <span style="color: #3399cc">!==</span> <span style="color: #cd0000">&#39;undefined&#39;</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+      <span style="color: #cccccc">console.warn(</span><span style="color: #cd0000">&#39;[vue-i18n] &#39;</span> <span style="color: #3399cc">+</span> <span style="color: #cccccc">msg);</span>
+      <span style="color: #000080">/* istanbul ignore if */</span>
+      <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(err)</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cccccc">console.warn(err.stack);</span>
+      <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">}</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">isObject</span> <span style="color: #cccccc">(obj)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">obj</span> <span style="color: #3399cc">!==</span> <span style="color: #cdcd00">null</span> <span style="color: #3399cc">&amp;&amp;</span> <span style="color: #cdcd00">typeof</span> <span style="color: #cccccc">obj</span> <span style="color: #3399cc">===</span> <span style="color: #cd0000">&#39;object&#39;</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">var</span> <span style="color: #cccccc">toString</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">Object</span><span style="color: #cccccc">.prototype.toString;</span>
+  <span style="color: #00cd00">var</span> <span style="color: #cccccc">OBJECT_STRING</span> <span style="color: #3399cc">=</span> <span style="color: #cd0000">&#39;[object Object]&#39;</span><span style="color: #cccccc">;</span>
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">isPlainObject</span> <span style="color: #cccccc">(obj)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">toString.call(obj)</span> <span style="color: #3399cc">===</span> <span style="color: #cccccc">OBJECT_STRING</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">isNull</span> <span style="color: #cccccc">(val)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">val</span> <span style="color: #3399cc">===</span> <span style="color: #cdcd00">null</span> <span style="color: #3399cc">||</span> <span style="color: #cccccc">val</span> <span style="color: #3399cc">===</span> <span style="color: #cdcd00">undefined</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">parseArgs</span> <span style="color: #cccccc">()</span> <span style="color: #cccccc">{</span>
+    <span style="color: #00cd00">var</span> <span style="color: #cccccc">args</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">[],</span> <span style="color: #cccccc">len</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">arguments.length;</span>
+    <span style="color: #cdcd00">while</span> <span style="color: #cccccc">(</span> <span style="color: #cccccc">len</span><span style="color: #3399cc">--</span> <span style="color: #cccccc">)</span> <span style="color: #cccccc">args[</span> <span style="color: #cccccc">len</span> <span style="color: #cccccc">]</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">arguments[</span> <span style="color: #cccccc">len</span> <span style="color: #cccccc">];</span>
+
+    <span style="color: #00cd00">var</span> <span style="color: #cccccc">locale</span> <span style="color: #3399cc">=</span> <span style="color: #cdcd00">null</span><span style="color: #cccccc">;</span>
+    <span style="color: #00cd00">var</span> <span style="color: #cccccc">params</span> <span style="color: #3399cc">=</span> <span style="color: #cdcd00">null</span><span style="color: #cccccc">;</span>
+    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(args.length</span> <span style="color: #3399cc">===</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+      <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(isObject(args[</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">])</span> <span style="color: #3399cc">||</span> <span style="color: #cd00cd">Array</span><span style="color: #cccccc">.isArray(args[</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">]))</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cccccc">params</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">args[</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">];</span>
+      <span style="color: #cccccc">}</span> <span style="color: #cdcd00">else</span> <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(</span><span style="color: #cdcd00">typeof</span> <span style="color: #cccccc">args[</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">]</span> <span style="color: #3399cc">===</span> <span style="color: #cd0000">&#39;string&#39;</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cccccc">locale</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">args[</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">];</span>
+      <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">}</span> <span style="color: #cdcd00">else</span> <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(args.length</span> <span style="color: #3399cc">===</span> <span style="color: #cd00cd">2</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+      <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(</span><span style="color: #cdcd00">typeof</span> <span style="color: #cccccc">args[</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">]</span> <span style="color: #3399cc">===</span> <span style="color: #cd0000">&#39;string&#39;</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cccccc">locale</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">args[</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">];</span>
+      <span style="color: #cccccc">}</span>
+      <span style="color: #000080">/* istanbul ignore if */</span>
+      <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(isObject(args[</span><span style="color: #cd00cd">1</span><span style="color: #cccccc">])</span> <span style="color: #3399cc">||</span> <span style="color: #cd00cd">Array</span><span style="color: #cccccc">.isArray(args[</span><span style="color: #cd00cd">1</span><span style="color: #cccccc">]))</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cccccc">params</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">args[</span><span style="color: #cd00cd">1</span><span style="color: #cccccc">];</span>
+      <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">}</span>
+
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">{</span> <span style="color: #cccccc">locale</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">locale,</span> <span style="color: #cccccc">params</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">params</span> <span style="color: #cccccc">}</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">getOldChoiceIndexFixed</span> <span style="color: #cccccc">(choice)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">choice</span>
+      <span style="color: #3399cc">?</span> <span style="color: #cccccc">choice</span> <span style="color: #3399cc">&gt;</span> <span style="color: #cd00cd">1</span>
+        <span style="color: #3399cc">?</span> <span style="color: #cd00cd">1</span>
+        <span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+      <span style="color: #3399cc">:</span> <span style="color: #cd00cd">1</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">getChoiceIndex</span> <span style="color: #cccccc">(choice,</span> <span style="color: #cccccc">choicesLength)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cccccc">choice</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">Math</span><span style="color: #cccccc">.abs(choice);</span>
+
+    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(choicesLength</span> <span style="color: #3399cc">===</span> <span style="color: #cd00cd">2</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span> <span style="color: #cdcd00">return</span> <span style="color: #cccccc">getOldChoiceIndexFixed(choice)</span> <span style="color: #cccccc">}</span>
+
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">choice</span> <span style="color: #3399cc">?</span> <span style="color: #cd00cd">Math</span><span style="color: #cccccc">.min(choice,</span> <span style="color: #cd00cd">2</span><span style="color: #cccccc">)</span> <span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">fetchChoice</span> <span style="color: #cccccc">(message,</span> <span style="color: #cccccc">choice)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #000080">/* istanbul ignore if */</span>
+    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(</span><span style="color: #3399cc">!</span><span style="color: #cccccc">message</span> <span style="color: #3399cc">&amp;&amp;</span> <span style="color: #cdcd00">typeof</span> <span style="color: #cccccc">message</span> <span style="color: #3399cc">!==</span> <span style="color: #cd0000">&#39;string&#39;</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span> <span style="color: #cdcd00">return</span> <span style="color: #cdcd00">null</span> <span style="color: #cccccc">}</span>
+    <span style="color: #00cd00">var</span> <span style="color: #cccccc">choices</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">message.split(</span><span style="color: #cd0000">&#39;|&#39;</span><span style="color: #cccccc">);</span>
+
+    <span style="color: #cccccc">choice</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">getChoiceIndex(choice,</span> <span style="color: #cccccc">choices.length);</span>
+    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(</span><span style="color: #3399cc">!</span><span style="color: #cccccc">choices[choice])</span> <span style="color: #cccccc">{</span> <span style="color: #cdcd00">return</span> <span style="color: #cccccc">message</span> <span style="color: #cccccc">}</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">choices[choice].trim()</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">looseClone</span> <span style="color: #cccccc">(obj)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">JSON.parse(JSON.stringify(obj))</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">remove</span> <span style="color: #cccccc">(arr,</span> <span style="color: #cccccc">item)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(arr.length)</span> <span style="color: #cccccc">{</span>
+      <span style="color: #00cd00">var</span> <span style="color: #cccccc">index</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">arr.indexOf(item);</span>
+      <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(index</span> <span style="color: #3399cc">&gt;</span> <span style="color: #3399cc">-</span><span style="color: #cd00cd">1</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+        <span style="color: #cdcd00">return</span> <span style="color: #cccccc">arr.splice(index,</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">)</span>
+      <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">}</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">var</span> <span style="color: #cccccc">hasOwnProperty</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">Object</span><span style="color: #cccccc">.prototype.hasOwnProperty;</span>
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">hasOwn</span> <span style="color: #cccccc">(obj,</span> <span style="color: #cccccc">key)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">hasOwnProperty.call(obj,</span> <span style="color: #cccccc">key)</span>
+  <span style="color: #cccccc">}</span>
+
+  <span style="color: #00cd00">function</span> <span style="color: #cccccc">merge</span> <span style="color: #cccccc">(target)</span> <span style="color: #cccccc">{</span>
+    <span style="color: #00cd00">var</span> <span style="color: #cccccc">arguments$1</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">arguments;</span>
+
+    <span style="color: #00cd00">var</span> <span style="color: #cccccc">output</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">Object</span><span style="color: #cccccc">(target);</span>
+    <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(</span><span style="color: #00cd00">var</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">1</span><span style="color: #cccccc">;</span> <span style="color: #cccccc">i</span> <span style="color: #3399cc">&lt;</span> <span style="color: #cccccc">arguments.length;</span> <span style="color: #cccccc">i</span><span style="color: #3399cc">++</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+      <span style="color: #00cd00">var</span> <span style="color: #cccccc">source</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">arguments$1[i];</span>
+      <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(source</span> <span style="color: #3399cc">!==</span> <span style="color: #cdcd00">undefined</span> <span style="color: #3399cc">&amp;&amp;</span> <span style="color: #cccccc">source</span> <span style="color: #3399cc">!==</span> <span style="color: #cdcd00">null</span><span style="color: #cccccc">)</span> <span style="color: #cccccc">{</span>
+        <span style="color: #00cd00">var</span> <span style="color: #cccccc">key</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">(</span><span style="color: #cdcd00">void</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">);</span>
+        <span style="color: #cdcd00">for</span> <span style="color: #cccccc">(key</span> <span style="color: #cdcd00">in</span> <span style="color: #cccccc">source)</span> <span style="color: #cccccc">{</span>
+          <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(hasOwn(source,</span> <span style="color: #cccccc">key))</span> <span style="color: #cccccc">{</span>
+            <span style="color: #cdcd00">if</span> <span style="color: #cccccc">(isObject(source[key]))</span> <span style="color: #cccccc">{</span>
+              <span style="color: #cccccc">output[key]</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">merge(output[key],</span> <span style="color: #cccccc">source[key]);</span>
+            <span style="color: #cccccc">}</span> <span style="color: #cdcd00">else</span> <span style="color: #cccccc">{</span>
+              <span style="color: #cccccc">output[key]</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">source[key];</span>
+            <span style="color: #cccccc">}</span>
+          <span style="color: #cccccc">}</span>
+        <span style="color: #cccccc">}</span>
+      <span style="color: #cccccc">}</span>
+    <span style="color: #cccccc">}</span>
+    <span style="color: #cdcd00">return</span> <span style="color: #cccccc">output</span>
+  <span style="color: #cccccc">}</span>
+</pre></div>
+</foreignObject>
+</svg>
+

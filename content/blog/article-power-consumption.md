@@ -1,7 +1,13 @@
-# Little adventures in determining battery dimensions for Wifi enabled products
++++
+title = "Little adventures in determining battery dimensions for Wifi enabled products"
+date = "2015-10-10T13:07:31+02:00"
+tags = ["iot"]
+categories = ["lorem"]
+author = "David Graeff"
++++
 
 At some point in time, when the low energy Zigbee and Bluetooth LE as well as the new proposed [Wi-Fi HaLow](https://www.wi-fi.org/news-events/newsroom/wi-fi-alliance-introduces-low-power-long-range-wi-fi-halow) are more common, it will be a lot easier to optimize for long battery runtime with known patterns. Unfortunately we are not quite there yet. If you need to stick to the Wi-Fi 802.11 standard and want to conserve power, your application needs some adaption and you are usually required to highly interact with the operating system or firmware framework to control the Wi-Fi sleep states.
-
+<!--more-->
 Let us dive into a power consumption analysis of the ESP8266, our recently used Wi-Fi enabled processing unit.
 All good stories start with a [Data-sheet](https://espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf).
 

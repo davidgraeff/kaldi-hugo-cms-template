@@ -1,7 +1,14 @@
-# The beauty of C++ abstractions in the embedded domain
++++
+title = "The beauty of C++ abstractions in the embedded domain"
+date = "2015-10-10T13:07:31+02:00"
+tags = ["iot"]
+categories = ["lorem"]
+author = "David Graeff"
++++
 
 The question of C++'s suitability for embedded software development stays a hard discussed topic amongst members of both the C and C++ community.
 Let me put a disclaimber here, that **Kompound.solutions** is advocating C++ and benefiting from its numeruous langauge features, especially in the embedded domain.
+<!--more-->
 See [Bjarne Stroustrup "Abstraction and the C++ machine model"](http://www.stroustrup.com/abstraction-and-machine.pdf) for more information.
 We do stick to a few in-house rules though and disable or not using parts of the c++ core language, noticably:
 

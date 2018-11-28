@@ -6,7 +6,7 @@ theme = "kompound"
 defaultContentLanguage = "en"
 
 [outputs]
-  home = ["HTML", "JSON"]
+  home = ["HTML"]
 
 [languages]
   [languages.en]
@@ -19,7 +19,7 @@ defaultContentLanguage = "en"
     [[languages.en.menu.header]]
       weight = 6
       name = "Developer corner"
-      url = "/de/blog/"
+      url = "/en/blog/"
     [[languages.en.menu.header]]
       weight = 3
       name = "Solutions"
@@ -85,7 +85,7 @@ defaultContentLanguage = "en"
     [[languages.de.menu.header]]
       weight = 6
       name = "Entwicklerblog"
-      url = "/de/blog/"
+      url = "/en/blog/"
     [[languages.de.menu.header]]
       weight = 3
       name = "Dienstleistungen"

@@ -5,23 +5,27 @@
 			{{ range (.Paginator 6).Pages }}
 			<div class="col-md-6">
 				<article class="blog-post">
-					{{ with .Params.image }}
-					<img src="{{ . | absURL }}" class="img-responsive" alt="post-thumb"> {{ end }}
-					<a class="post-title" href="{{ .Permalink }}">{{ .Title }}</a>
+					{{- with .Params.image -}}
+					<img src="{{ . | absURL }}" class="img-responsive" alt="post-thumb">
+					{{- end -}}
+					<a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+					{{ with .Date }}
+					<div>{{- .Format "January 2, 2006" -}}</div> 
+					{{ end }}
 					<p>
-						{{ .Summary }}
+						{{- .Summary | safeHTML -}}
 					</p>
-					<a href="{{ .Permalink }}" class="btn btn-main">Read More</a>
+					{{ if .Truncated -}}
+					<a href="{{ .RelPermalink }}">Read More</a>
+					{{- end }}
 				</article>
 			</div>
-			{{ end }}
+			{{ end -}}
 		</div>
 		<div class="col-12 text-center">
 			{{ template "_internal/pagination.html" . }}
 		</div>
 	</div>
 	</section>
-
-	{{ partial "call-to-action.html" . }}
-	
+	{{- partial "call-to-action.html" . -}}
 {{ end }}

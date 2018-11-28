@@ -1,8 +1,14 @@
-# Synergetic effects in using open source projects
++++
+title = "Synergetic effects in using open source projects"
+date = "2015-10-10T13:07:31+02:00"
+tags = ["iot"]
+categories = ["lorem"]
+author = "David Graeff"
++++
 
 A huge benefit of open source libraries and tools in your software pipeline is the parallel evolution and more code reviews than your own team can ever perform.
 A decently documented project can save you a tremendous amount of development hours and costs.
-
+<!--more-->
 What does happen though is that your library usecase is not exactly aligned with the original goals and you run into unexpected behaviour within your data domain.
 Usually you run into erroneous code paths unveiled by your automated testing.
 And this is exactly the time when you or your company should give some love back to the project.

@@ -1,28 +1,23 @@
 {{ define "main" }}
-<div class="post">
-<!-- Wrapper Start -->
-<section class="section" style="border: 1px dotted #ddd;">
-	<div class="container">
+<div class="container">
 	<div class="row">
-		<div>
-		<div class="block">
-						{{ with .Params.image }}<img src="{{ . | absURL }}" width="100%" alt="post-image"> {{ end }}
-			<h1>{{ .Params.title }}</h1>
-			<div class="post-info-wrapper">
-			<p class="italic">By <span class="bold">{{ .Params.author }}</span> on <span class="bold">{{ .Date.Format .Site.Params.dateFormat }}</span></p>
-			</div>
-			<hr />
-			<p>{{ .Content }}</p>
+		<div class="col-12">
+			<nav aria-label="breadcrumb">{{ partial "breadcrumb.html" . }}</nav>
 		</div>
-		</div><!-- .col-md-7 close -->
+		<div class="offset-md-2 col-md-8">
+			{{ with .Params.image }}<img src="{{ . | absURL }}" width="100%" alt="post-image"> {{ end }}
+			<h1>{{ .Params.title }}</h1>
+			<p class="italic">By <span class="bold">{{ .Params.author }}</span> on <span class="bold">
+					{{ .Date.Format .Site.Params.dateFormat }}</span></p>
+			<hr />
+			{{ .Content | markdownify }}
+		</div>
 	</div>
-	</div>
-</section>
 </div>
 <p class="center-text" style="padding: 30px;">
 	<a class="btn btn-main" href="{{ $.Site.BaseURL }}/blog">Back to blog</a>
 </p>
 
 {{ partial "call-to-action.html" . }}
-	
+
 {{ end }}

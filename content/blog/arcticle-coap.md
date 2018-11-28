@@ -1,11 +1,17 @@
-# Not inventing the wheel again - The lwM2M protocol as application protocol
++++
+title = "Not inventing the wheel again - The lwM2M protocol"
+date = "2015-10-10T13:07:31+02:00"
+tags = ["iot"]
+categories = ["lorem"]
+author = "David Graeff"
++++
 
 Every new product cycle starts with defining requirements, think of use-cases and operation conditions leading to a selection of RF and application communication protocols.
 
 On the radio / RF front you have the choice of BLE (Bluetooth Low Energy), Z-Wave, WiFi-ah (HaLow), IEEE 802.15.4 based protocols like Zigbee and Thread and many more.
 
 As usual selecting one of these is very much depending on the products use-cases. There is no clear winner on the horizon and there might pop up one or another other protocol in the future. For this article we consider IP network layer based solutions like Thread (IPv6 based mesh protocol) and Wi-Fi to be ideal candidates for future products. For one reason, because it is easier to integrate those products into existing IP based networks and at the same time mature available diagnostic tools and understanding of IP networks and network congestions.
-
+<!--more-->
 ## MQTT and CoAP IoT protocols
 
 Looking at the application protocols, the Internet of Things momevent yielded some interesting new protocols.

@@ -30,12 +30,13 @@
                 {{ $fixedlang := replaceRE "^/([^/]+)/([^/]+)/|.*" "$1" $p.URL }}
                 {{- if eq $fixedlang "" -}}
                   <a class="nav-link text-nowrap" href="{{ $p.URL | relLangURL }}">{{ $p.Name }}</a>
-                  {{- else -}}
-                  <a class="nav-link text-nowrap" href="{{ $p.URL }}">
-                      {{- if ne (string $.Lang) $fixedlang -}}
-                      <i class="flag-icon flag-icon-{{ $fixedlang }} d-none d-lg-inline-block"></i>
-                      {{- end -}}
-                    {{ $p.Name }}
+                {{- else -}}
+                  {{ $urlpart := replaceRE "^/([^/]+)(.*)|.*" "$2" $p.URL }}
+                  <a class="nav-link text-nowrap" href="{{ $urlpart }}">
+                    {{- if ne (string $.Lang) $fixedlang -}}
+                    <i class="flag-icon flag-icon-{{ $fixedlang }} d-none d-lg-inline-block"></i>
+                    {{- end -}}
+                  {{ $p.Name }}
                   </a>
                 {{- end -}}
               </li>
@@ -131,13 +132,4 @@
       </div>
     </div>
   </div>
-  <script>
-      document.getElementById("callbackModal").addEventListener("shown.bs.modal", event => {
-        document.getElementById("callbackname").focus();
-      } , false);
-      document.getElementById("callbackform").addEventListener("FormSubmitted", event => {
-        document.getElementById("callbackModalOpen").Modal.hide();
-      } , false);
-      
-    </script>
 {{- end -}}

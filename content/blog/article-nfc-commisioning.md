@@ -1,8 +1,14 @@
-# Cableless Wi-Fi commisioning - Entering the realm of NFC
++++
+title = "Cableless Wi-Fi commisioning - Entering the realm of NFC"
+date = "2015-10-10T13:07:31+02:00"
+tags = ["iot"]
+categories = ["lorem"]
+author = "David Graeff"
++++
 
 Provision connection parameters is solved differently across the existing wireless protocols.
 Before we turn our focus on the 802.11 Wi-Fi standard, how does other protocols pair wireless peer devices?
-
+<!--more-->
 ## Bluetooth 4 / LE
 
 The Bluetooth protocol operates at 2.4GHz in the same unlicensed ISM frequency band where RF protocols like ZigBee and WiFi also exist.

@@ -174,10 +174,10 @@ label {
 }
 .tns-nav > [aria-selected="true"] { background: #999; }
 
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-arrow .breadcrumb-item+.breadcrumb-item::before {
   content: none;
 }
-.breadcrumb-item+.breadcrumb-item {
+.breadcrumb-arrow .breadcrumb-item+.breadcrumb-item {
   padding-left: 0;
 }
 

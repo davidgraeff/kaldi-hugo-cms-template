@@ -1,12 +1,6 @@
 [aboutustitle]
 other = "About us"
 
-[aboutusitalic]
-other = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"
-
-[aboutusparagraph]
-other = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id"
-
 [aboutusshort]
 other = "We develop customized full stack software and hardware solutions for the IoT, industrial- and desktop environments"
 
@@ -45,3 +39,21 @@ other = "Email"
 
 [phone]
 other = "Phone"
+
+[slidertitle1]
+other = "Secure"
+
+[slidertitle2]
+other = "Robust"
+
+[slidertitle3]
+other = "Privacy<br>&nbsp;&nbsp;&nbsp;compliant"
+
+[slidertext1]
+other = "<h2>Customer relation - the next level</h2><p>We make it super easy to interact with us.</p><ul><li>Manage your project orders online<li>Extend your contracts<li>Progress report and neat task and bug tracker<li>10h/day support line</ul>"
+
+[slidertext2]
+other = "<h2>Robust, Secure, Privacy compliant</h2><p>10+ years experience of software development makes your individual project not only a success.</p><ul><li>Reliability is a must and is guaranteed with comprehensive automated tests.<li>Extensive documentation and clear structure makes our products easily extendable and maintainable.<li>We love the detail. If you are annoyed, we are annoyed.</ul>"
+
+[slidertext3]
+other = "<h2>We <i class='fa fa-heart'></i> open source</h2><p>Kompound solutions contributed a new MQTT subsystem to <a href='https://www.eclipse.org/smarthome' target='_blank'>Eclipse Smarthome</a>.</p><ul><li>Builds up on newest framework technologies like the Automation module<li>Fully documented<li>Extensive unit and implementation tests</ul>"

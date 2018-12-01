@@ -36,8 +36,11 @@ function interceptFormSubmissions() {
 }
 
 function callModalBind() {
-    const element = document.getElementById("callbackModal");
+    var element = document.getElementById("callbackModal");
     if (!element) return;
+    var myModal = new Modal(element, {
+        keyboard: false
+      });
     element.addEventListener("shown.bs.modal", () => {
         document.getElementById("callbackname").focus();
     }, false);
@@ -47,7 +50,44 @@ function callModalBind() {
         element.addEventListener("FormSubmitted", () => {
             document.getElementById("callbackModalOpen").Modal.hide();
         }, false);
+}
 
+function queueNextSlideChange(e) {
+    clearTimeout(window.slideTimer);
+    window.slideTimer = setTimeout(() => onslidecontrolchange(document.querySelector("input[name=slide][value='" + ((e.value % 3) + 1) + "']")), 7000);    
+}
+function onslidecontrolchange(e) {
+    e.checked = true;
+    document.querySelectorAll("#intro .imagepart .slide:nth-child(" + e.value + ") .animated").forEach(elem => {
+        console.log("animate start", elem);
+        elem.classList.remove("animated");
+        elem.classList.remove(elem.dataset.aname);
+        void elem.offsetWidth;
+        setTimeout(()=> {elem.classList.add("animated"); elem.classList.add(elem.dataset.aname)},1);
+    });
+    document.querySelector("input[name=proxy][value='" + e.value + "']").checked = true;
+    queueNextSlideChange(e);
+}
+
+function controlEnable() {
+    clearTimeout(window.nextControlCommandTimer);
+    window.nextControlCommandTimer = setTimeout(() => {
+        document.querySelectorAll("input[name=slide]").forEach(e => e.disabled = false);
+        clearTimeout(window.slideTimer);    
+    }, 50);
+}
+function controlDisable() {
+    clearTimeout(window.nextControlCommandTimer);
+    window.nextControlCommandTimer = setTimeout(() => {
+        document.querySelectorAll("input[name=slide]").forEach(e => e.disabled = true);
+        //queueNextSlideChange(document.querySelector("input[name=slide]:checked"));
+    }, 50);
+}
+
+function indexSliderStart() {
+    var e = document.querySelector("input[name=slide][value='1']");
+    if (!e) return;
+    onslidecontrolchange(e);
 }
 
 function loadUrl(newUrl) {
@@ -151,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("MainContentChanged", () => {
         loadBackground();
         callModalBind();
+        indexSliderStart();
         interceptFormSubmissions();
     });
     document.dispatchEvent(new Event('MainContentChanged'));

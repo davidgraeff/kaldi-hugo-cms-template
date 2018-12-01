@@ -1,4 +1,4 @@
-{{ $events := where .Site.RegularPages.ByDate "Section" "blog" }}
+{{ $events := where .Site.AllPages.ByDate "Section" "blog" }}
 {{ range $events | first 1 }}
 <section id="feature">
     <div class="container">

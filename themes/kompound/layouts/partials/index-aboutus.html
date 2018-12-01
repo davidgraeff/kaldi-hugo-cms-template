@@ -1,19 +1,88 @@
 <section id="intro">
-<div class="container">
-    <div class="row">
-    <div class="col-md-7 col-sm-12">
-        <div class="block">
-        <div class="section-title">
-            <h2>{{ i18n "aboutustitle" }}</h2>
-            <p>{{ i18n "aboutusitalic" }}</p>
+    <form class="container" onmouseover="controlEnable()" onmouseout="controlDisable()">
+        <div class="row">
+            <input class="hidden" type="radio" name="proxy" value="1" checked>
+            <input class="hidden" type="radio" name="proxy" value="2">
+            <input class="hidden" type="radio" name="proxy" value="3">
+            <div class="col-md-7 col-sm-12 imagepart">
+                <div class="slide" style="color:black;pointer-events: none;">
+                    <div class="halfexample">
+                        <div class="sliderexample1">
+                            <div style="text-align: right"><span style="padding-top:5px;padding-right: 10px">Milestone:</span>
+                                <button style="margin-bottom:10px" class="btn btn-secondary dropdown-toggle">Backend:
+                                    Push not...</button><br>
+                                <button class="btn btn-primary sliderexample1btn dropdown-toggle">Add task</button></div>
+                            <i style="position: absolute;top:70px;right:20px;" class="fas fa-hand-point-up fa-2x"></i>
+                            <table>
+                                <tr>
+                                    <th>Task</th>
+                                    <th style="width:200px">Assigned hours / week</th>
+                                    <th style="width:170px">Expected duration</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="halfexample">
+                        <div class="sliderexample2">
+                            <div style="text-align: right">
+                                <span>Task label: Hadoop cluster commissioning</span>
+                                <i style="margin-left:10px" class="fas fa-edit"></i><br><br>
+                                <span style="margin-top:-5px;padding-right: 10px">Assigned worktime:</span>
+                                <input class="slider" type="range" name="devhours" min="0" max="100" value="50">
+                                <output for="devhours" onforminput="value = devhours.valueAsNumber;">50%</output>
+                            </div>
+                            <i style="position: absolute;top:60px;right:140px;" class="fas fa-hand-point-up fa-2x"></i>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img data-aname="fadeIn" class="animated fadeIn" src="/img/slider/cyber-security-band.jpg"
+                        style="position: absolute;width: 100%;height: 100%;z-index:-4">
+                    <img data-aname="fadeIn" class="animated fadeIn delay-2s" src="/img/slider/robust-band.jpg"
+                        style="position: absolute;width: 100%;height: 100%;z-index:-3">
+                    <img data-aname="fadeIn" class="animated fadeIn delay-4s" src="/img/slider/privacy-band.jpg"
+                        style="position: absolute;width: 100%;height: 100%;z-index:-2">
+                    <div data-aname="fadeInRight" class="animated fadeInRight">
+                        <div class="title" style="left: -100px">{{ i18n "slidertitle1" | safeHTML }}</div>
+                    </div>
+                    <div data-aname="fadeInRight" class="animated fadeInRight delay-2s">
+                        <div class="title" style="left: 0px">{{ i18n "slidertitle2" | safeHTML }}</div>
+                    </div>
+                    <div data-aname="fadeInRight" class="animated fadeInRight delay-4s">
+                        <div class="title" style="left: 100px">{{ i18n "slidertitle3" | safeHTML }}</div>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url(/img/slider/eshmqtt.jpg)">
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-12 textpart">
+                <div class="slide">
+                    {{ i18n "slidertext1" | safeHTML }}
+                </div>
+                <div class="slide">
+                    {{ i18n "slidertext2" | safeHTML }}
+                </div>
+                <div class="slide">
+                    {{ i18n "slidertext3" | safeHTML }}
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <label class="slidecontrol"><input type="radio" name="slide" value="1" oninput="onslidecontrolchange(this)"
+                        disabled>
+                    <i class="fa fa-circle"></i><i class="fa fa-dot-circle"></i>
+                </label>
+                <label class="slidecontrol"><input type="radio" name="slide" value="2" oninput="onslidecontrolchange(this)"
+                        disabled>
+                    <i class="fa fa-circle"></i><i class="fa fa-dot-circle"></i>
+                </label>
+                <label class="slidecontrol"><input type="radio" name="slide" value="3" oninput="onslidecontrolchange(this)"
+                        disabled>
+                    <i class="fa fa-circle"></i><i class="fa fa-dot-circle"></i>
+                </label>
+            </div>
         </div>
-    </div><!-- .col-md-7 close -->
-    <div class="col-md-5 col-sm-12">
-        <div class="block">
-            <p>{{ i18n "aboutusparagraph" }}</p>
-        </div>
-    </div><!-- .col-md-5 close -->
-    </div>
-</div>
+    </form>
 </section>

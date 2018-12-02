@@ -2,25 +2,22 @@
     padding: 50px 0;
 }
 
-#intro .imagepart .slide {
-    transition: opacity 0.3s;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
 #intro .textpart .slide {
-    transition: opacity 0.3s,height 0.3s;
-    width: 100%;
-    height:0;
-    overflow:hidden;
+    transition: visibility 0s,opacity 0.7s,visibility 0s;
+    visibility: hidden;
+    position: absolute;
 }
 
 #intro .imagepart {
     max-width: 500px;
-    min-height: 250px;
+    height: 250px;
     margin-right: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#intro .textpart {
+    min-height: 330px;
     overflow: hidden;
 }
 
@@ -30,6 +27,10 @@
     transform: translate(0px, -250px);
     background-size: cover;
     color: white;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 #intro .imagepart .slide .title {
@@ -55,21 +56,21 @@
     font-size: 30px;
 }
 
-#intro input[name=proxy][value='1']:checked~div .slide:nth-child(1) {
+#intro input[name=proxy][value='1']:checked~ div .slide:nth-child(1) {
     opacity: 1;
-    height: auto;
+    visibility: visible;
     transform: translate(0px, 0px);
 }
 
-#intro input[name=proxy][value='2']:checked~div .slide:nth-child(2) {
+#intro input[name=proxy][value='2']:checked~ div .slide:nth-child(2) {
     opacity: 1;
-    height: auto;
+    visibility: visible;
     transform: translate(0px, 0px);
 }
 
-#intro input[name=proxy][value='3']:checked~div .slide:nth-child(3) {
+#intro input[name=proxy][value='3']:checked~ div .slide:nth-child(3) {
     opacity: 1;
-    height: auto;
+    visibility: visible;
     transform: translate(0px, 0px);
 }
 

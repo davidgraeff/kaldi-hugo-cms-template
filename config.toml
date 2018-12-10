@@ -148,9 +148,12 @@ defaultContentLanguage = "en"
   app_report = "/app/#/report"
 
 [params]
-  email = "<a href='mailto:support@kompound.solutions'>support@kompound.solutions</a>"
-  phone = "<a href='tel:+491632662555'>+49 163 266 2555</a>"
-  fax = "<a href='fax:+4932223942249'>+49 32223 942 249</a>"
+  email = "mailto:support@kompound.solutions"
+  email_title = "support@kompound.solutions"
+  phone = "tel:+491632662555"
+  phone_title = "+49 163 266 2555"
+  fax = "fax:+4932223942249"
+  fax_title = "+49 32223 942 249"
   boxaddress = "Am Zehnthof, 45307 Essen"
 
 # The site's parameters
@@ -180,20 +183,6 @@ defaultContentLanguage = "en"
     p2 = "Automatisierung"
     p3 = "dem Internet der Dinge"
 
-  [languages.en.params.feature]
-    title = "AWe believe in great ideas"
-    content = "Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
-    [languages.en.params.feature.button]
-      caption = "Go here"
-      url = "#"
-
-  [languages.de.params.feature]
-    title = "AWe believe in great ideas"
-    content = "Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
-    [languages.de.params.feature.button]
-      caption = "Go here"
-      url = "#"
-
   [languages.en.params.call]
     enable = true
     title = "We call you back"
@@ -210,8 +199,9 @@ defaultContentLanguage = "en"
       url = "/quote"
     [languages.en.params.call.btnContact]
       msg = "Request an instant, no-obligation quote"
-      caption = "Contact us"
+      caption = "contact form"
       url = "/contact"
+      pretext = "Email us or use the"
     [languages.en.params.call.btnCallback]
       msg = "Enter your details and we call you back!"
       caption = "Let us call you back"
@@ -233,8 +223,9 @@ defaultContentLanguage = "en"
       url = "/quote"
     [languages.de.params.call.btnContact]
       msg = "Request an instant, no-obligation quote"
-      caption = "Kontaktieren Sie uns"
+      caption = "Kontaktformular"
       url = "/contact"
+      pretext = "Mailen Sie uns oder nutzen Sie das "
     [languages.de.params.call.btnCallback]
       msg = "Let us call you back!"
       caption = "Rückruf vereinbaren"

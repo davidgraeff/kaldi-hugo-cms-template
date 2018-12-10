@@ -1,8 +1,46 @@
 {{ with $.Site.Params.call }}
 
-<section class="call-to-action-bg call-to-action">
+<section id="call-to-action" class="bg">
   <div class="container">
     <div class="row justify-content-md-center">
+      <div class="col-sm-12 col-md-auto">
+        <div class="card bg-light shadow mb-2">
+          <div class="card-header">Message</div>
+          <div class="card-body-a">
+              <a href="{{ safeHTML $.Site.Params.email }}"><i class="fas fa-envelope mr-1"></i>{{ safeHTML $.Site.Params.email_title }}*</a>
+              <a href="{{ safeHTML $.Site.Params.fax }}"><i class="fas fa-fax mr-1"></i>{{ safeHTML $.Site.Params.fax_title }}</a>
+              <a href="javascript:document.querySelector('.purechat-collapsed-image').click()"><i class="fas fa-comments mr-1"></i>Live chat</a>
+          </div>
+          <div class="card-footer small">
+            {{- with $.Site.Params.call.btnContact -}}
+            * {{ .pretext }} <a href="{{ .url | relLangURL }}">{{ .caption }}</a>
+            {{- end -}}
+          </div> 
+        </div>
+        <div class="card bg-light shadow">
+          <div class="card-header">Phone</div>
+          <div class="card-body-a">
+            <a href="{{ safeHTML $.Site.Params.phone }}"><i class="fas fa-phone mr-1"></i>{{ safeHTML $.Site.Params.phone_title }}</a>
+            {{- with $.Site.Params.call.btnCallback -}}
+            <a href="#" data-toggle="modal" data-target="#callbackModal" id="callbackModalOpen"><i class="fas fa-phone mr-1"></i>
+              {{ .caption }}</a>
+            {{- end -}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-auto d-none d-md-block" style="align-self: center;font-size:50pt">
+        &rArr;
+      </div>
+      <div class="col-sm-12 col-md-auto">
+        <div class="card bg-light shadow">
+            <div class="card-header">Message</div>
+            <div class="card-body">
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!--
         <div class="col-sm-12 col-md-auto pb-3">
           {{- with $.Site.Params.call.btnRequestQuote -}}
           <a class="btn btn-contact" href="{{ .url | relLangURL }}" >{{ .caption }}</a>
@@ -18,20 +56,8 @@
           <a href="#" class="btn btn-contact" data-toggle="modal" data-target="#callbackModal" id="callbackModalOpen">{{ .caption }}</a>
           {{- end -}}
         </div>
-      </div>
-    <div class="row ">
-      <ul class="col-md-12">
-      <li>
-        <i class="fas fa-envelope"></i>{{ safeHTML $.Site.Params.email }}
-      </li>
-      <li>
-        <i class="fas fa-phone"></i>{{ safeHTML $.Site.Params.phone }}
-      </li>
-      <li>
-        <i class="fas fa-fax"></i>{{ safeHTML $.Site.Params.fax }}
-      </li>
-    </ul>
-    </div>
+      -->
+  </div>
   </div>
 </section>
 {{- end -}}

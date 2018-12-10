@@ -1,0 +1,55 @@
+
+#feature {
+    background: url("/img/featue-bg.jpg");
+    background-position: 50% 94px;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: visible;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    padding: 100px 0;
+}
+
+#feature h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+#feature p {
+    color: #8d8f92;
+    margin-bottom: 20px;
+}
+
+#feature .btn-view-works {
+    background: #655E7A;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    #features-work .block ul li {
+        width: 49%;
+    }
+    #features-contact .block ul li {
+        width: 49%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #features .features-img {
+        text-align: center;
+    }
+}

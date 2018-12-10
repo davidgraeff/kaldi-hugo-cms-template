@@ -10,13 +10,16 @@
                 <i class="fas fa-map-marker"></i><a data-fullreload="true" href='{{ relLangURL "contact#gmap" }}'>{{ .boxaddress }}</a>
               </li>
               <li>
-                <i class="fas fa-envelope"></i> {{ safeHTML $.Site.Params.email }}
+                <i class="fas fa-envelope"></i>
+                <a href="{{ safeHTML $.Site.Params.email }}">{{ safeHTML $.Site.Params.email_title }}</a>
               </li>
               <li>
-                <i class="fas fa-phone"></i> {{ safeHTML $.Site.Params.phone }}
+                <i class="fas fa-phone"></i>
+                <a href="{{ safeHTML $.Site.Params.phone }}">{{ safeHTML $.Site.Params.phone_title }}</a>
               </li>
               <li>
-                <i class="fas fa-fax"></i> {{ safeHTML $.Site.Params.fax }}
+                <i class="fas fa-fax"></i>
+                <a href="{{ safeHTML $.Site.Params.fax }}">{{ safeHTML $.Site.Params.fax_title }}</a>
               </li>
         </ul>
         <style>

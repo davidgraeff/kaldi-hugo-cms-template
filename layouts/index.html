@@ -1,10 +1,6 @@
 {{ define "main" }}
-	{{ $style := resources.Get "css/index.css" -}}
-	{{ $index_slide := resources.Get "css/index_slide.css" -}}
-	{{ $tinysliderstyle := resources.Get "css/tiny-slider.css" -}}
-	{{ $style := slice $style $index_slide $tinysliderstyle | resources.Concat "css/page.css" | minify -}}
- 
-	<link rel="stylesheet" href="{{ $style.Permalink }}">
+	{{ $options := (dict "targetPath" "/css/index.css" "outputStyle" "compressed" "enableSourceMap" true) -}}
+    <link rel="stylesheet" href='{{- (resources.Get "/scss/index.scss" | toCSS $options | minify).Permalink | safeHTMLAttr -}}'>
 
 	{{ partial "index-logo.html" . }}
 	{{ partial "index-aboutus.html" . }}

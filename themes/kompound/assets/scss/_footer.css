@@ -1,0 +1,136 @@
+
+#customerfooter {
+    border: 1px solid #404040;
+    padding-top: 10px;
+    position: relative;
+    top: -10px;
+}
+
+@media only screen and (max-width: 767px) {
+    #customerfooter {
+        border: none;
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: #222222;
+    border-top: 1px solid #404040;
+    color: #dfdfdf;
+}
+
+footer .container {
+    padding: 100px 0 80px;
+}
+
+footer ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+footer h3 {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+footer .text {
+    color: #dfdfdf;
+    padding-right: 20px;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+footer .footer-links a:hover {
+    color: #79a741;
+}
+
+footer .footer-links a {
+    color: #b4b4b4;
+    transition: color .3s;
+    display: block;
+    margin-bottom: 10px;
+}
+
+footer .footer-legal {
+    background-color: #1b1b1b;
+    border-top: 1px solid #2c2c2c;
+    text-align: center;
+    padding: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0px;
+    color: #bdbdbd;
+}
+
+footer .footer-legal li {
+    display: inline-block;
+    padding: 0px 20px;
+    border-left: 1px solid #999;
+}
+
+footer .footer-legal li:first-child {
+    border-left: none;
+}
+
+footer .footer-legal a {
+    display: inline-block;
+    color: #bdbdbd;
+    padding: 0 0 5px;
+    border-bottom: 1px solid transparent;
+    transition: all .2s ease-in-out;
+}
+
+footer .footer-legal a:hover {
+    color: #79a741;
+    border-bottom: 1px solid #79a741;
+    padding: 0 0 5px;
+}
+
+@media only screen and (max-width: 575px) {
+    footer .footer-legal li {
+        padding: 0;
+        display: inherit;
+        border-left: none;
+    }
+    footer ul.footer-legal {
+        text-align: initial;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    footer .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  footer .navbar {
+      margin-bottom: 0px;
+      border: 0px;
+      min-height: 40px;
+  }
+  footer .navbar-default {
+      border: 0px;
+      width: 68%;
+  }
+  footer .navbar-default .navbar-nav li a {
+      color: #494949;
+      padding: 10px 10px;
+      font-size: 15px;
+  }
+  footer .navbar-default .navbar-nav li a:hover {
+      color: #000;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  footer .footer-manu {
+      display: none;
+  }
+}

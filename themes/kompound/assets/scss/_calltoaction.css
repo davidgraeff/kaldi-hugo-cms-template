@@ -1,0 +1,56 @@
+#call-to-action.bg {
+    background: url("/img/call-to-action-bg.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#call-to-action hr {
+    border-top-color: gray;
+    width: 100%;
+}
+
+#call-to-action a {
+    transition: 0.3s;
+}
+
+#call-to-action a:hover {
+    color: #80d6a3;
+}
+
+#call-to-action .card-body-a a {
+    padding: 10px 22px;
+    width:100%;
+    display: block;
+}
+
+#call-to-action .card-footer {
+    padding: .1rem 1.25rem;
+}
+
+#call-to-action .card-header {
+    padding: .15rem 1.25rem;
+    text-align: center;
+}
+
+#call-to-action .card-body-a a:hover {
+    background-color: dimgrey;
+}
+
+@media only screen and (max-width: 575px) {
+    #call-to-action ul li {
+        display: inherit;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+  #call-to-action p {
+      padding: 0px 0px 40px;
+  }
+  #call-to-action .btn {
+      padding: 10px 20px;
+      font-size: 15px;
+  }
+}

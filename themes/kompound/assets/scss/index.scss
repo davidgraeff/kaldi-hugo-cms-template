@@ -1,0 +1,23 @@
+@import "_index_mainlogo";
+@import "_index_blog";
+@import "_index_intro";
+@import "_index_technologies";
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    #wrapper-work ul li .items-text {
+        padding-top: 0;
+        padding-left: 25px;
+    }
+    #wrapper-work ul li .items-text h2 {
+        padding-bottom: 10px;
+        padding-top: 40px;
+    }
+    #wrapper-work ul li .items-text p {
+        font-size: 14px;
+        line-height: 20px;
+        padding-right: 30px;
+    }
+    #wrapper-contact .block {
+        padding-bottom: 50px;
+    }
+}
